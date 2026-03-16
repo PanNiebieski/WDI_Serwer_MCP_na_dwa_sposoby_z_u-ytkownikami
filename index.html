@@ -1,0 +1,5306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Napiszmy MCP na dwa sposoby w C# i użyjmy go w VS Code, Claude Desktop i Cursor</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width" />
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,900&amp;subset=latin-ext" rel="stylesheet" />
+        <!-- Shower Theme -->
+        <link rel="stylesheet" href="vendors/shower-ribbon/styles/screen-16x9.css" />
+        <link rel="stylesheet" href="vendors/shower-CezaryWalenciuk/styles/main.css" />
+        <!-- Prism.js -->
+        <link rel="stylesheet" href="vendors/prism/custom-prism.css" />
+        <!-- <link rel="stylesheet" href="vendors/prism/prism-my-white.css" />
+        <link rel="stylesheet" href="codegrid-white.css" /> -->
+  
+        <link rel="stylesheet" href="vendors/prism/prism-my-dark.css" />
+        <link rel="stylesheet" href="codegrid-dark.css" /> 
+ 
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Napiszmy MCP na dwa sposoby w C# i użyjmy go w VS Code, Claude Desktop i Cursor">
+        <meta property="og:description" content="Presentation for WDI">
+        <meta property="og:url" content="https://panniebieski.github.io/webinar_WDI_WDI_Zakl_cia_GraphQL_dla_mag_w_ASP_NET_Core_Jak_zaczarowa_swoje_API/">
+        <meta property="og:site_name" content="Napiszmy MCP na dwa sposoby w C# i użyjmy go w VS Code, Claude Desktop i Cursor">
+        <meta property="og:image" content="https://panniebieski.github.io/webinar_WDI_WDI_Zakl_cia_GraphQL_dla_mag_w_ASP_NET_Core_Jak_zaczarowa_swoje_API/forSocialMedia/FacebookImageForMainPage.jpg"><meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta name="twitter:title" content="Napiszmy MCP na dwa sposoby w C# i użyjmy go w VS Code, Claude Desktop i Cursor">
+        <meta name="twitter:description" content="Presentation for WDI">
+        <meta name="twitter:image" content="https://panniebieski.github.io/webinar_WDI_WDI_Zakl_cia_GraphQL_dla_mag_w_ASP_NET_Core_Jak_zaczarowa_swoje_API/forSocialMedia/FacebookImageForMainPage.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@walenciukc">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://panniebieski.github.io/webinar_WDI_WDI_Zakl_cia_GraphQL_dla_mag_w_ASP_NET_Core_Jak_zaczarowa_swoje_API/forSocialMedia/icon/icon16x16.png">
+        <link rel="apple-touch-icon" href="https://panniebieski.github.io/webinar_WDI_WDI_Zakl_cia_GraphQL_dla_mag_w_ASP_NET_Core_Jak_zaczarowa_swoje_API/forSocialMedia/icon180x180.png">
+        <link rel="shortcut icon" href="https://panniebieski.github.io/webinar_WDI_WDI_Zakl_cia_GraphQL_dla_mag_w_ASP_NET_Core_Jak_zaczarowa_swoje_API/forSocialMedia/icon16x16.png">
+        <meta name="msapplication-square150x150logo" content="https://panniebieski.github.io/webinar_WDI_WDI_Zakl_cia_GraphQL_dla_mag_w_ASP_NET_Core_Jak_zaczarowa_swoje_API/forSocialMedia/icon180x180.png">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    </head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Napiszmy MCP na dwa sposoby w C# i użyjmy go w VS Code, Claude Desktop i Cursor</h1>
+        <p></p>
+    </header>
+    <section class="slide front-page">
+        <div class="details">
+            <!-- 1. Avatar -->
+            <span>Cezary Walenciuk</span>
+            <!-- 3. Presentation title -->
+            <h2 class="bigbig"><strong style="font-size: 35px;  line-height: 1.3;">
+
+                    <span class="titlec1">Napiszmy MCP</span>
+                    <br />
+                    <span class="titlec5">na dwa sposoby w C#<span>
+                    <span class="titlec6">i użyjmy go w<span><br />
+                    <span class="titlec3">VS Code, Claude Desktop i Cursor</span></strong></h2>
+            <!-- 5. Contact the speaker -->
+            <h2><a href="https://twitter.com/WalenciukC">@walenciukC</a></h2>
+        </div>
+        <div>
+            <!-- 2. Speaker -->
+        </div>
+        <div class="imag">
+            <img src="images/my-avatar.jpg" alt="Speaker">
+        </div>
+    </section>
+  
+<!--
+
+Napiszmy MCP na dwa sposoby w C# i użyjmy go w VS Code, Claude Desktop i Cursor. 
+
+-->
+    <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Jaki jest cel tej prezentacji?</li>
+                    <ol class="nonumbers">
+                        <li class="next">Wyjaśnić co to jest MCP</li>
+                        <li class="next">Pokazać użycie gotowych MCP z Dockera</li>
+                        <li class="next">Napisać Serwer MCP w C# i użyć go w <br /> <br /><span class="yellow">Claude Desktop</span>,<span class="pruple">Cursor</span>, <span class="green">LLM Studio</span>, <span class="blue">CoPilot</span>, <span class="blackspan">.Continue</span></li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+    <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Co jeszcze</li>
+                    <ol class="nonumbers">
+                        <li class="next">Zapoznanie z trendami MCP i czy wymyślono lepsze podejście?</li>
+                        <li class="next">Jak zaprojektować autoryzację użytkowników oraz ich uprawnienia w wersji HTTP/SEE?</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+             <section class="slide " style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/news_about_ai/banka.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+       <section class="slide creamGrey kkk">
+        <span class="shout colors" ><span>Paczka NuGet do tworzenia serwerów MCP w C#<br /> ulepsza się błyskawicznie<br />😎
+        </span></span>
+    </section>   
+    <section class="slide visualstudioBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures//about_modelcontextprotocol/old.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+    <section class="slide visualstudioBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures//about_modelcontextprotocol/v0.8.0.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+   <section class="slide conicG  greenseatext">
+        <span class="shout colors" ><span>Przypomienie z poprzedniej prezentacji
+        </span></span>
+    </section>
+        <section class="slide" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/slides/9.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/slides/10.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/slides/6.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/new_iconfr/user.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Co nam się nie podobało w tym podejściu</li>
+                    <ol class="nonumbers">
+                        <li class="next">Wiele instancji procesu MCP dla każdego LLM</li>
+                        <li class="next">Ciężkie debugowanie obrazów Docker</li>
+                        <li class="next">Przekazywanie konfiguracji</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+        <section class="slide cursorBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/cursor.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>   
+    <section class="slide" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/slides/7.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/new_iconfr/study.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Co się nauczyliśmy</li>
+                    <ol class="nonumbers">
+                        <li class="next">Nie wszystko powinno być MCP ponieważ LLM może tracić dużo czasu na szukaniu samego narzędzia</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>   
+                <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/new_iconfr/remember.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Złote zasady MCP</li>
+                    <ol class="nonumbers">
+                        <li class="next">Nazewnictwo i opisy metod trzeba napisać w takim kontekście, aby LLM wiedział co ma uruchomić</li>
+                        <li class="next">Bounded Context z DDD jest przydatny do wydzielania MCP</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+    <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/new_iconfr/push-pin.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">O czym trzeba pamiętać przy MCP</li>
+                    <ol class="nonumbers">
+                        <li class="next">MCP budujemy dla LLM czyli jak dla ludzi</li>
+                        <li class="next">Gotowe REST API nie powinno być od razu zamieniane na MCP</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>   
+        <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/new_iconfr/remember2.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Jak nie mieć problemów z swoim MCP</li>
+                    <ol class="nonumbers">
+                        <li class="next">Napisać testy dotyczące funkcjonalności MCP</li>
+                        <li class="next">Pobieranie danych X, Wysłanie email, Tworzenie plików</li>
+                        <li class="next">Do testów MCP uzyć MCP Inspector</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+        <section class="slide" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/mcp_inspector.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/news_about_ai/Context_engenin.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/new_iconfr/android.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">MCP, a Context Engineering</li>
+                    <ol class="nonumbers">
+                        <li class="next">Wysłać tylko potrzebne dane dla LLM</li>
+                        <li class="next">Rozbicie jednej metody na mniejsze</li>
+                        <li class="next">Filtrowanie danych</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+   <section class="slide creamGrey lll ">
+        <span class="shout colors" ><span>Czy wymyślili coś lepszego niż MCP? <br />🤔
+        </span></span>
+    </section>
+       <section class="slide" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/news_about_ai/lepszeMCP.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+              <section class="slide creamGrey  fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/new_iconfr/solution.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Problem MCP</li>
+                    <ol class="nonumbers">
+                        <li class="next">Ty => Znajdź mi plik excel na Google Drive, zajrzyj do niego i stwórz nowy plik</li>
+                        <li class="next">Model => uruchomi z 3 metody MCP</li>
+                        <li class="next">Model => zobaczy twoje prywatne dane</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+          <section class="slide creamGrey  fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/new_iconfr/nswag2.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Alternatywa od MCP</li>
+                    <ol class="nonumbers">
+                        <li class="next">Model => Wygeneruj kod, który zrobi wszystko co opisałeś</li>
+                        <li class="next">Ty => Uruchom kod lokalnie</li>
+                        <li class="next">Ty => Daj wynik dalej jeśli trzeba</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+       <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Co jest lepsze niż MCP? <br />🤔
+        </span></span>
+    </section>
+    <section class="slide creamGGGragient orangetext">
+        <span class="shout colors" ><span>Pisanie kodu pod przypadek<br /> xD
+        </span></span>
+    </section>
+    <section class="slide creammBBBGragient   deepbluetext">
+        <span class="shout colors smallerfontnew2" ><span>Widać też nacisk firm na agentów którzy mają "grzebać" nam w komputerze
+        </span></span>
+    </section>
+    <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/iconsFr/contract.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Agenci co mają "grzebać" w komputerze </li>
+                    <ol class="nonumbers">
+                        <li class="next">Microsoft => CoPilot</li>
+                        <li class="next">Anthropic => Claude Cowork</li>
+                        <li class="next">OpenAI => OpenClaw</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+     <section class="slide creamGGGragient orangetext">
+        <span class="shout colors" ><span>Niech agent napisze skrypt i go uruchomi 
+        </span></span>
+    </section>
+                 <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/news_about_ai/copilot.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+             <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/news_about_ai/moltbook.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+         <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/news_about_ai/Peter.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+           <section class="slide" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/news_about_ai/kirodeleteawas.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+
+        <section class="slide conicG  greenseatext">
+        <span class="shout colors" ><span>Jeśli interesują was trendy w AI to polecam:
+        </span></span>
+    </section>
+             <section class="slide" style="background-color:white">
+        <figure>
+            <img class="cover" src="pictures/new/linkedin.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+             <section class="slide" style="background-color:white">
+        <figure>
+            <img class="cover" src="pictures/new/fanpage.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                 <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_com/WDI WARSZAWSKIE DNI INFORMATYKI 2026.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide conicG  greenseatext">
+        <span class="shout colors" ><span>Wracamy do prezentacji o MCP
+        </span></span>
+    </section>
+            <section class="slide conicG  greenseatext">
+        <span class="shout colors" ><span>Co dziś budujemy?
+        </span></span>
+    </section>
+    <section class="slide" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/slides/7.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+         <section class="slide creamGrey kkk">
+        <span class="shout smallerfontnew2 colors" ><span>Czy wszystkie aplikacje wspierają protokół SSE/HTTP?
+        </span></span>
+    </section>   
+        <section class="slide gradientblueblackgreen" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/aplikacje.png"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+     <section class="slide gradientblueblackgreen" style="background-color:black">
+        <figure>
+            <img class="cover " style="height: 50%;top:  35%;"  src="pictures/new/aplikacje.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+        <span class="shout colors" style="position: absolute;  top:  79%;" ><span>Uruchomiliśmy MCP przez stdio
+        </span></span>
+    </section>
+    <section class="slide gradientblueblackgreen" style="background-color:black">
+        <figure>
+            <img class="cover " style="height: 50%;top:  35%;"  src="pictures/new/aplikacje.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+        <span class="shout colors" style="position: absolute;  top:  79%;" ><span>Co wspiera protokół SSE/HTTP
+        </span></span>
+    </section>
+            <section class="slide gradientblueblackgreen" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/aplikacje.png"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide gradientblueblackgreen" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/aplikacje-01.png"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide claudeBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/claudedesktop-niedziala.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide claudeBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/claudedesktop-niedziala-01.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide gradientblueblackgreen" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/aplikacje-02.png"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide cursorBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/cursor-dziala-01.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide cursorBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/cursor-dziala-02.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                             <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Wstrzykniecie tymczasowych zmiennych środowiskowych</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-json">
+                    <code style="line-height: 20px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        {
+                        "mcpServers": {
+                            "obsidian": {
+                            "command": "docker",
+                            "args": [
+                                "run",
+                                "-i",
+                                "--rm",
+                                "-e",
+                                "OBSIDIAN_HOST",
+                                "-e",
+                                "OBSIDIAN_API_KEY",
+                                "mcp/obsidian"
+                            ],
+                            "env": {
+                                "OBSIDIAN_HOST": "host.docker.internal",
+                                "OBSIDIAN_API_KEY": ""
+                            }
+                            },
+                            "youtube_transcript": {
+                            "command": "docker",
+                            "args": [
+                                "run",
+                                "-i",
+                                "--rm",
+                                "mcp/youtube-transcript"
+                            ]
+                            },
+                            "company-documents": {
+                            "command": "docker",
+                            "args": [
+                                "run",
+                                "-i",
+                                "--rm",
+                                "-v", "C:\\Users\\Cezary\\mcp-documents-data:/data",
+                                "-e", "DB_CONNECTION_STRING=/data/documents.db",
+                                "-e", "MAILGUN_API_KEY=",
+                                "-e", "MAILGUN_DOMAIN=s",
+                                "-e", "MAILGUN_FROM_EMAIL=",
+                                "-e", "MAILGUN_FROM_NAME=Data Export Service",
+                                "-e", "DEFAULT_RECIPIENT=crezber@gmail.com",
+                                "mcp-server-documents:latest"
+                            ],
+                            "env": {
+                                "DB_CONNECTION_STRING": "/data/documents.db",
+                                "MAILGUN_API_KEY": ",
+                                "MAILGUN_DOMAIN": ".mailgun.org",
+                                "MAILGUN_FROM_EMAIL": "postmaster@.mailgun.org",
+                                "MAILGUN_FROM_NAME" : "Data Export Service",
+                                "DEFAULT_RECIPIENT": "@gmail.com"
+                            }
+                            },
+                            ,
+                            "company-documents-server": {
+                                "url": "http://localhost:3001/mcp/sse"
+                            }
+                        }
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+    <!--KOD TUTAJ-->
+        <section class="slide gradientblueblackgreen" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/aplikacje-3.png"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide visualstudioBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/copilot-dziala.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide visualstudioBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/copilot-dziala-02.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Copilot json</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 22px;overflow: hidden;  " class="language-json">
+                    <code style="line-height: 22px !important;">
+
+
+
+                        {
+                        "servers": {
+                            "github": {
+                            "url": "https://api.githubcopilot.com/mcp/"
+                            },
+                            "company-documents": {
+                            "command": "docker",
+                            "args": [
+                                "run",
+                                "-i",
+                                "--rm",
+                                "-v",
+                                "C:\\Users\\Cezary\\mcp-documents-data:/data",
+                                "mcp-server-documents:latest"
+                            ]
+                            },
+                            "company-documents-server": {
+                            "transport": "sse",
+                            "url": "http://localhost:3001/mcp/sse"
+                            }
+
+                        },
+                        "inputs": []
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+        <section class="slide gradientblueblackgreen" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/aplikacje-4.png"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide cursorBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/gdziejestConfigContinue.png"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+
+        <section class="slide visualstudioBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/continue-dziala-01.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">YAML główna konfiguracja Continue</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 22px;overflow: hidden;  " class="language-yaml">
+                    <code style="line-height: 22px !important;">
+                        name: Local Agent
+                        version: 1.0.0
+                        schema: v1
+                        models:
+                        - name: Autodetect
+                            provider: ollama
+                            model: AUTODETECT
+                        mcpServers:
+                        - name: company-documents
+                            command: docker
+                            args:
+                            - exec
+                            - -i
+                            - mcp-server-documents-container
+                            - ./MCPServerDocuments
+                            env: {}
+                        - name: company-documents-server
+                            type: streamable-http
+                            url: http://localhost:3001/mcp
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+        <section class="slide gradientblueblackgreen" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/aplikacje-5.png"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide llstudioBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/llmStudi-dziala.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">LLMStudio json</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 22px;overflow: hidden;  " class="language-json">
+                    <code style="line-height: 22px !important;">
+
+
+
+
+
+
+
+
+
+
+                    
+                        {
+                        "mcpServers": {
+                            "MCP_DOCKER": {
+                            "command": "docker",
+                            "args": [
+                                "mcp",
+                                "gateway",
+                                "run"
+                            ],
+                            "env": {
+                                "LOCALAPPDATA": "C:\\Users\\Cezary\\AppData\\Local",
+                                "ProgramData": "C:\\ProgramData",
+                                "ProgramFiles": "C:\\Program Files"
+                            }
+                            },
+                            "company-documents": {
+                            "command": "docker",
+                            "args": [
+                                "run",
+                                "--rm",
+                                "-i",
+                                "-v",
+                                "C:\\Users\\Cezary\\mcp-documents-data:/data",
+                                "mcp-server-documents:latest"
+                            ]
+                            },
+                            "company-documents-server": {
+                            "url": "http://localhost:3001/mcp"
+                            }
+                        }
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+        <section class="slide gradientblueblackgreen" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/aplikacje-6.png"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Jako użytkownik Claude PRO mogę spróbować innaczej to zrobić
+        </span></span>
+    </section>
+
+        <section class="slide claudeBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/claudedesktop-niedziala-02.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide claudeBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/claudedesktop-niedziala-03.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide claudeBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/claudedesktop-niedziala-04.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide " style="background-color:white">
+        <figure>
+            <img class="cover" src="pictures/new/claudedesktop-niedziala-05.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Spoiler
+        </span></span>
+    </section>
+
+                <section class="slide claudeBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/claudedesktop-niedziala-06.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide gradientblueblackgreen" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/aplikacje-6.png"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+     <section class="slide " style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new/dowodzedziala.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+
+            <section class="slide  creammBBBGragient  deepbluetext" style="background-color:#10151B">
+        <span class="shout colors" ><span>Jak przetestować nasz kod serwera HTTP/SSE MCP w C#?
+        </span></span>
+    </section>
+     <section class="slide " style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/newcode/CzyDziala-01.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+     <section class="slide " style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/newcode/CzyDziala-02.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+     <section class="slide " style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/newcode/CzyDziala-03.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+     <section class="slide " style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/newcode/CzyDziala-04.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+     <section class="slide " style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/newcode/CzyDziala-05.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+     <section class="slide " style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/newcode/CzyDziala-06.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+     <section class="slide cursorBackground " style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/newcode/CzyDziala-07.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide conicG  greenseatext">
+        <span class="shout colors" ><span>Jak obecnie wygląda nasz kod serwera MCP w C#? <br />🤔
+        </span></span>
+    </section>
+         <section class="slide cursorBackground" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/newcode/projekt.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                        <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Program.cs dla MCP serwer HTTP/SSE </h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height: 20px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using MCPServerDocuments;
+                        using MCPServerDocuments.Database;
+                        using MCPServerDocuments.Tools;
+                        using Microsoft.Extensions.Options;
+
+                        var builder = WebApplication.CreateBuilder(args);
+
+                        // MCP Server with BOTH transports
+                        builder.Services
+                            .AddMcpServer()   
+                            .WithHttpTransport()     
+                            .WithTools&lt;MCPServerDataExportTools&gt;();
+
+                        // Database
+                        var defaultDbPath = Path.Combine(
+                            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                            &quot;MCPServerDocuments&quot;,
+                            &quot;documents.db&quot;);
+
+                        builder.Services.AddSingleton(new DatabaseConfig
+                        {
+                            ConnectionString = Environment.GetEnvironmentVariable(&quot;DB_CONNECTION_STRING&quot;) ?? defaultDbPath
+                        });
+
+                        // Repositories &amp; services
+                        builder.Services.AddSingleton&lt;CompanyDocumentsRepository&gt;();
+                        builder.Services.AddSingleton&lt;UserHistoryRepository&gt;();
+                        builder.Services.AddSingleton&lt;ExcelService&gt;();
+
+                        //builder.Services.AddSingleton(new MailgunConfig
+                        //{
+                        //    ApiKey = Environment.GetEnvironmentVariable(&quot;MAILGUN_API_KEY&quot;) ?? &quot;&quot;,
+                        //    Domain = Environment.GetEnvironmentVariable(&quot;MAILGUN_DOMAIN&quot;) ?? &quot;&quot;,
+                        //    FromEmail = Environment.GetEnvironmentVariable(&quot;MAILGUN_FROM_EMAIL&quot;) ?? &quot;&quot;,
+                        //    FromName = Environment.GetEnvironmentVariable(&quot;MAILGUN_FROM_NAME&quot;) ?? &quot;&quot;,
+                        //    DefaultRecipient = Environment.GetEnvironmentVariable(&quot;DEFAULT_RECIPIENT&quot;) ?? &quot;&quot;
+                        //});
+                        builder.Services.Configure&lt;MailgunConfig&gt;(builder.Configuration.GetSection(&quot;Mailgun&quot;));
+                        builder.Services.AddSingleton(sp =&gt; sp.GetRequiredService&lt;IOptions&lt;MailgunConfig&gt;&gt;().Value);
+
+                        builder.Services.AddSingleton&lt;MailgunEmailService&gt;();
+
+                        var app = builder.Build();
+
+                        // Initialize database
+                        var dbConfig = app.Services.GetRequiredService&lt;DatabaseConfig&gt;();
+                        await DatabaseInitializer.InitializeDatabaseAsync(dbConfig.ConnectionString);
+
+                        // Map MCP endpoints
+                        app.MapMcp(&quot;/mcp&quot;); // Automatycznie mapuje /mcp/sse i mcp/message
+
+                        // health check endpoint
+                        app.MapGet(&quot;/health&quot;, () =&gt; Results.Ok(new { 
+                            status = &quot;healthy&quot;, 
+                            timestamp = DateTime.UtcNow,
+                            transports = new[] { &quot;sse&quot;, &quot;http&quot; }
+                        }));
+
+                        app.Run();
+
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                        <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">MCPServerDataExportTools w wersji 0.8.0 </h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height: 20px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using MCPServerDocuments.Database;
+                        using MCPServerDocuments.DataClasses;
+                        using MCPServerDocuments.Tools;
+                        using ModelContextProtocol.Server;
+                        using System.ComponentModel;
+                        using System.Text.Json;
+
+                        namespace MCPServerDocuments;
+
+                        [McpServerToolType]
+                        public sealed class MCPServerDataExportTools(
+                            CompanyDocumentsRepository repository,
+                            UserHistoryRepository historyRepository,
+                            ExcelService excelService,
+                            MailgunEmailService mailgunEmailService)
+                        {
+                            // Using JsonSerializerOptions with web defaults — 
+                            // camelCase, no need for source-gen context attributes.
+                            // The SDK serializes tool return values automatically, 
+                            // but since we return string we control it ourselves.
+                            private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web)
+                            {
+                                WriteIndented = false
+                            };
+
+                            [McpServerTool, Description(&quot;Search for documents by PESEL number.&quot;)]
+                            public async Task&lt;string&gt; SearchDocumentsByPesel(
+                                [Description(&quot;PESEL number to search for&quot;)] string pesel)
+                            {
+                                try
+                                {
+                                    var documents = await repository.GetDocumentsByPeselAsync(pesel);
+
+                                    return Serialize(new SearchDocumentsResult
+                                    {
+                                        Success = true,
+                                        Message = $&quot;Found {documents.Count} document(s) for PESEL: {pesel}&quot;,
+                                        Pesel = pesel,
+                                        DocumentCount = documents.Count,
+                                        Documents = documents
+                                    });
+                                }
+                                catch (Exception ex)
+                                {
+                                    return SerializeError(ex.Message);
+                                }
+                            }
+
+                            [McpServerTool, Description(&quot;Search for documents by Person ID.&quot;)]
+                            public async Task&lt;string&gt; SearchDocumentsByPersonId(
+                                [Description(&quot;Person ID to search for&quot;)] int personId)
+                            {
+                                try
+                                {
+                                    var documents = await repository.GetDocumentsByPersonIdAsync(personId);
+
+                                    return Serialize(new SearchDocumentsResult
+                                    {
+                                        Success = true,
+                                        Message = $&quot;Found {documents.Count} document(s) for Person ID: {personId}&quot;,
+                                        PersonId = personId,
+                                        DocumentCount = documents.Count,
+                                        Documents = documents
+                                    });
+                                }
+                                catch (Exception ex)
+                                {
+                                    return SerializeError(ex.Message);
+                                }
+                            }
+
+                            [McpServerTool, Description(&quot;Get all user history with full details including user names and document information.&quot;)]
+                            public async Task&lt;string&gt; GetAllUserHistoryWithDetails()
+                            {
+                                try
+                                {
+                                    var historyDetails = await historyRepository.GetAllHistoryWithDetailsAsync();
+
+                                    return Serialize(new UserHistoryResult
+                                    {
+                                        Success = true,
+                                        Message = $&quot;Found {historyDetails.Count} history record(s)&quot;,
+                                        RecordCount = historyDetails.Count,
+                                        HistoryRecords = historyDetails
+                                    });
+                                }
+                                catch (Exception ex)
+                                {
+                                    return SerializeError(ex.Message);
+                                }
+                            }
+
+                            [McpServerTool, Description(&quot;Search by Person ID, export to Excel in-memory, and send via email to recipient.&quot;)]
+                            public async Task&lt;string&gt; ProcessDocumentWorkflowByPersonId(
+                                [Description(&quot;Person ID to search for&quot;)] int personId,
+                                [Description(&quot;Email recipient (optional)&quot;)] string? recipient = null)
+                            {
+                                try
+                                {
+                                    var documents = await repository.GetDocumentsByPersonIdAsync(personId);
+                                    if (documents.Count == 0)
+                                        return SerializeError($&quot;No documents found for Person ID: {personId}&quot;);
+
+                                    var fileBytes = await excelService.SaveDocumentsAsExcelAsync(documents, $&quot;PersonID_{personId}&quot;);
+                                    var fileName = $&quot;PersonID_{personId}_export.xlsx&quot;;
+
+                                    var mailgunMessageId = await mailgunEmailService.SendExcelEmailAsync(
+                                        fileBytes, fileName, recipient,
+                                        $&quot;Document Export for Person ID: {personId}&quot;,
+                                        $&quot;Please find attached {documents.Count} document(s) for Person ID {personId}.&quot;);
+
+                                    return Serialize(new WorkflowResult
+                                    {
+                                        Success = true,
+                                        Message = &quot;Complete workflow executed successfully&quot;,
+                                        PersonId = personId,
+                                        DocumentCount = documents.Count,
+                                        FileName = fileName,
+                                        EmailSentTo = recipient ?? &quot;default recipient&quot;,
+                                        EmailService = &quot;Mailgun&quot;,
+                                        MailgunMessageId = mailgunMessageId
+                                    });
+                                }
+                                catch (Exception ex)
+                                {
+                                    return SerializeError(ex.Message);
+                                }
+                            }
+
+                            // Helpers
+
+                            private static string Serialize&lt;T&gt;(T value) =&gt;
+                                JsonSerializer.Serialize(value, JsonOptions);
+
+                            private static string SerializeError(string error) =&gt;
+                                Serialize(new ErrorResult { Success = false, Error = error });
+                        }
+
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                        <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Klasy typów zwracanych, ale w sumie nie są potrzebne </h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height: 20px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using MCPServerDocuments.DataClasses;
+
+                        namespace MCPServerDocuments.DataClasses;
+
+                        // Search results
+
+                        public class SearchDocumentsResult
+                        {
+                            public bool Success { get; set; }
+                            public string Message { get; set; } = string.Empty;
+                            public string? Pesel { get; set; }
+                            public int? PersonId { get; set; }
+                            public int DocumentCount { get; set; }
+                            public List&lt;CompanyDocument&gt; Documents { get; set; } = [];
+                            public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+                        }
+
+                        // User history results
+
+                        public class UserHistoryResult
+                        {
+                            public bool Success { get; set; }
+                            public string Message { get; set; } = string.Empty;
+                            public int RecordCount { get; set; }
+                            public List&lt;UserHistoryWithDetails&gt; HistoryRecords { get; set; } = [];
+                            public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+                        }
+
+                        // Excel + email workflow results
+                        public class WorkflowResult
+                        {
+                            public bool Success { get; set; }
+                            public string Message { get; set; } = string.Empty;
+                            public int? PersonId { get; set; }
+                            public int DocumentCount { get; set; }
+                            public string FileName { get; set; } = string.Empty;
+                            public string EmailSentTo { get; set; } = string.Empty;
+                            public string EmailService { get; set; } = string.Empty;
+                            public string? MailgunMessageId { get; set; }
+                            public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+                        }
+
+                        // Generic error
+
+                        public class ErrorResult
+                        {
+                            public bool Success { get; set; }
+                            public string Error { get; set; } = string.Empty;
+                            public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+ </section>
+<section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Przykład ExcelService</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 17px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height: 17px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using MCPServerDocuments.DataClasses;
+                        using OfficeOpenXml;
+                        using OfficeOpenXml.Style;
+                        using System.Drawing;
+
+                        namespace MCPServerDocuments.Tools;
+
+                        public class ExcelService
+                        {
+                            public Task&lt;byte[]&gt; SaveDocumentsAsExcelAsync(List&lt;CompanyDocument&gt; documents, string fileNamePrefix)
+                            {
+                                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+                                using var package = new ExcelPackage();
+                                var ws = package.Workbook.Worksheets.Add(&quot;Document Export&quot;);
+
+                                // Headers
+                                string[] headers = [&quot;ID&quot;, &quot;Person ID&quot;, &quot;PESEL&quot;, &quot;Document Type&quot;, &quot;Document Number&quot;,
+                                                    &quot;Title&quot;, &quot;Description&quot;, &quot;File Path&quot;, &quot;Created At&quot;, &quot;Modified At&quot;, &quot;Status&quot;];
+
+                                for (int col = 0; col &lt; headers.Length; col++)
+                                    ws.Cells[1, col + 1].Value = headers[col];
+
+                                // Data rows
+                                for (int i = 0; i &lt; documents.Count; i++)
+                                {
+                                    var d = documents[i];
+                                    var row = i + 2;
+                                    ws.Cells[row, 1].Value = d.Id;
+                                    ws.Cells[row, 2].Value = d.PersonId;
+                                    ws.Cells[row, 3].Value = d.Pesel;
+                                    ws.Cells[row, 4].Value = d.DocumentType;
+                                    ws.Cells[row, 5].Value = d.DocumentNumber;
+                                    ws.Cells[row, 6].Value = d.Title;
+                                    ws.Cells[row, 7].Value = d.Description;
+                                    ws.Cells[row, 8].Value = d.FilePath;
+                                    ws.Cells[row, 9].Value = d.CreatedAt.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+                                    ws.Cells[row, 10].Value = d.ModifiedAt?.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) ?? &quot;&quot;;
+                                    ws.Cells[row, 11].Value = d.Status;
+                                }
+
+                                FormatWorksheet(ws, headers.Length, documents.Count);
+
+                                using var stream = new MemoryStream();
+                                package.SaveAs(stream);
+                                return Task.FromResult(stream.ToArray());
+                            }
+
+                            private static void FormatWorksheet(ExcelWorksheet ws, int columnCount, int rowCount)
+                            {
+                                using (var range = ws.Cells[1, 1, 1, columnCount])
+                                {
+                                    range.Style.Font.Bold = true;
+                                    range.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                                    range.Style.Fill.BackgroundColor.SetColor(Color.LightGray);
+                                    range.Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                                }
+
+                                for (int col = 1; col &lt;= columnCount; col++)
+                                    ws.Column(col).AutoFit();
+
+                                if (rowCount &gt; 0)
+                                {
+                                    using var range = ws.Cells[2, 1, rowCount + 1, columnCount];
+                                    range.Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                                    range.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                                }
+                            }
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                        <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Przykład MailGunService </h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 16px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height: 16px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using Microsoft.Extensions.Logging;
+                        using System.Net.Http.Headers;
+                        using System.Text;
+
+                        namespace MCPServerDocuments.Tools;
+
+                        public class MailgunEmailService
+                        {
+                            private readonly MailgunConfig _config;
+                            private readonly ILogger&lt;MailgunEmailService&gt; _logger;
+                            private readonly HttpClient _httpClient;
+
+                            public MailgunEmailService(MailgunConfig config, ILogger&lt;MailgunEmailService&gt; logger)
+                            {
+                                _config = config ?? throw new ArgumentNullException(nameof(config));
+                                _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+                                if (string.IsNullOrWhiteSpace(config.ApiKey))
+                                    throw new InvalidOperationException(&quot;Mailgun API key is not configured.&quot;);
+                                if (string.IsNullOrWhiteSpace(config.Domain))
+                                    throw new InvalidOperationException(&quot;Mailgun domain is not configured.&quot;);
+
+                                _httpClient = new HttpClient();
+                                var authToken = Convert.ToBase64String(Encoding.ASCII.GetBytes($&quot;api:{config.ApiKey}&quot;));
+                                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(&quot;Basic&quot;, authToken);
+                            }
+
+                            /// &lt;summary&gt;
+                            /// Sends an email with an in-memory Excel file attachment via Mailgun.
+                            /// &lt;/summary&gt;
+                            public async Task&lt;string&gt; SendExcelEmailAsync(
+                                byte[] fileBytes,
+                                string fileName,
+                                string? recipient = null,
+                                string? subject = null,
+                                string? messageBody = null)
+                            {
+                                var toEmail = !string.IsNullOrWhiteSpace(recipient) ? recipient : _config.DefaultRecipient;
+
+                                if (string.IsNullOrWhiteSpace(toEmail))
+                                    return &quot;No recipient email address provided and no default configured.&quot;;
+
+                                var emailSubject = subject ?? &quot;Document Export Attached&quot;;
+                                var emailContent = messageBody ?? &quot;Please find the requested document export attached.&quot;;
+
+                                using var form = new MultipartFormDataContent
+                                {
+                                    { new StringContent($&quot;{_config.FromName} &lt;{_config.FromEmail}&gt;&quot;), &quot;from&quot; },
+                                    { new StringContent(toEmail), &quot;to&quot; },
+                                    { new StringContent(emailSubject), &quot;subject&quot; },
+                                    { new StringContent(emailContent), &quot;text&quot; }
+                                };
+
+                                var fileContent = new ByteArrayContent(fileBytes);
+                                fileContent.Headers.ContentType = new MediaTypeHeaderValue(
+                                    &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;);
+                                form.Add(fileContent, &quot;attachment&quot;, fileName);
+
+                                var url = $&quot;https://api.mailgun.net/v3/{_config.Domain}/messages&quot;;
+                                var response = await _httpClient.PostAsync(url, form);
+                                var responseBody = await response.Content.ReadAsStringAsync();
+
+                                if (!response.IsSuccessStatusCode)
+                                {
+                                    _logger.LogError(&quot;Failed to send email via Mailgun. Status: {StatusCode}, Error: {Error}&quot;,
+                                        response.StatusCode, responseBody);
+                                    return $&quot;Mailgun email failed: {responseBody}&quot;;
+                                }
+
+                                var messageId = ExtractMessageId(responseBody) ?? &quot;unknown&quot;;
+                                _logger.LogInformation(&quot;Email sent via Mailgun. Message-ID: {MessageId}, To: {To}&quot;, messageId, toEmail);
+                                return messageId;
+                            }
+
+                            private static string? ExtractMessageId(string responseBody)
+                            {
+                                var marker = &quot;\&quot;id\&quot;:&quot;;
+                                var idx = responseBody.IndexOf(marker, StringComparison.OrdinalIgnoreCase);
+                                if (idx &gt;= 0)
+                                {
+                                    var start = responseBody.IndexOf(&#39;&lt;&#39;, idx);
+                                    var end = responseBody.IndexOf(&#39;&gt;&#39;, start);
+                                    if (start &gt;= 0 &amp;&amp; end &gt; start)
+                                        return responseBody[start..(end + 1)];
+                                }
+                                return null;
+                            }
+                        }
+
+                        public class MailgunConfig
+                        {
+                            public string ApiKey { get; set; } = string.Empty;
+                            public string Domain { get; set; } = string.Empty;
+                            public string FromEmail { get; set; } = string.Empty;
+                            public string FromName { get; set; } = string.Empty;
+                            public string DefaultRecipient { get; set; } = string.Empty;
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                        <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">CompanyDocumentsRepository</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height: 20px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using MCPServerDocuments.DataClasses;
+                        using Microsoft.Data.Sqlite;
+
+                        namespace MCPServerDocuments.Database;
+
+                        public class CompanyDocumentsRepository(DatabaseConfig dbConfig)
+                        {
+                            public async Task&lt;List&lt;CompanyDocument&gt;&gt; GetDocumentsByPeselAsync(string pesel)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;&quot;&quot;
+                                    SELECT Id, PersonId, Pesel, DocumentType, DocumentNumber, Title, 
+                                        Description, FilePath, CreatedAt, ModifiedAt, Status
+                                    FROM Documents
+                                    WHERE Pesel = $pesel
+                                    ORDER BY CreatedAt DESC
+                                    &quot;&quot;&quot;;
+                                command.Parameters.AddWithValue(&quot;$pesel&quot;, pesel);
+
+                                return await ReadDocumentsAsync(command);
+                            }
+
+                            public async Task&lt;List&lt;CompanyDocument&gt;&gt; GetDocumentsByPersonIdAsync(int personId)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;&quot;&quot;
+                                    SELECT Id, PersonId, Pesel, DocumentType, DocumentNumber, Title, 
+                                        Description, FilePath, CreatedAt, ModifiedAt, Status
+                                    FROM Documents
+                                    WHERE PersonId = $personId
+                                    ORDER BY CreatedAt DESC
+                                    &quot;&quot;&quot;;
+                                command.Parameters.AddWithValue(&quot;$personId&quot;, personId);
+
+                                return await ReadDocumentsAsync(command);
+                            }
+
+                            public async Task&lt;int&gt; AddDocumentAsync(CompanyDocument document)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;&quot;&quot;
+                                    INSERT INTO Documents (PersonId, Pesel, DocumentType, DocumentNumber, Title, 
+                                                        Description, FilePath, CreatedAt, Status)
+                                    VALUES ($personId, $pesel, $docType, $docNumber, $title, $description, 
+                                            $filePath, $createdAt, $status);
+                                    SELECT last_insert_rowid();
+                                    &quot;&quot;&quot;;
+
+                                command.Parameters.AddWithValue(&quot;$personId&quot;, document.PersonId);
+                                command.Parameters.AddWithValue(&quot;$pesel&quot;, document.Pesel);
+                                command.Parameters.AddWithValue(&quot;$docType&quot;, document.DocumentType);
+                                command.Parameters.AddWithValue(&quot;$docNumber&quot;, document.DocumentNumber);
+                                command.Parameters.AddWithValue(&quot;$title&quot;, document.Title);
+                                command.Parameters.AddWithValue(&quot;$description&quot;, document.Description);
+                                command.Parameters.AddWithValue(&quot;$filePath&quot;, document.FilePath);
+                                command.Parameters.AddWithValue(&quot;$createdAt&quot;, document.CreatedAt);
+                                command.Parameters.AddWithValue(&quot;$status&quot;, document.Status);
+
+                                var result = await command.ExecuteScalarAsync();
+                                return Convert.ToInt32(result);
+                            }
+
+                            private SqliteConnection CreateConnection() =&gt;
+                                new($&quot;Data Source={dbConfig.ConnectionString}&quot;);
+
+                            private static async Task&lt;List&lt;CompanyDocument&gt;&gt; ReadDocumentsAsync(SqliteCommand command)
+                            {
+                                var documents = new List&lt;CompanyDocument&gt;();
+                                using var reader = await command.ExecuteReaderAsync();
+                                while (await reader.ReadAsync())
+                                {
+                                    documents.Add(new CompanyDocument
+                                    {
+                                        Id = reader.GetInt32(0),
+                                        PersonId = reader.GetInt32(1),
+                                        Pesel = reader.GetString(2),
+                                        DocumentType = reader.GetString(3),
+                                        DocumentNumber = reader.GetString(4),
+                                        Title = reader.GetString(5),
+                                        Description = reader.GetString(6),
+                                        FilePath = reader.GetString(7),
+                                        CreatedAt = reader.GetDateTime(8),
+                                        ModifiedAt = reader.IsDBNull(9) ? null : reader.GetDateTime(9),
+                                        Status = reader.GetString(10)
+                                    });
+                                }
+                                return documents;
+                            }
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                        <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">UserHistoryRepository</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height: 20px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using MCPServerDocuments.DataClasses;
+                        using Microsoft.Data.Sqlite;
+
+                        namespace MCPServerDocuments.Database;
+
+                        public class UserHistoryRepository(DatabaseConfig dbConfig)
+                        {
+                            // User Methods
+
+                            public async Task&lt;User?&gt; GetUserByIdAsync(int userId)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;SELECT Id, UserName FROM Users WHERE Id = $userId&quot;;
+                                command.Parameters.AddWithValue(&quot;$userId&quot;, userId);
+
+                                using var reader = await command.ExecuteReaderAsync();
+                                return await reader.ReadAsync() ? MapUser(reader) : null;
+                            }
+
+                            public async Task&lt;User?&gt; GetUserByNameAsync(string userName)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;SELECT Id, UserName FROM Users WHERE UserName = $userName&quot;;
+                                command.Parameters.AddWithValue(&quot;$userName&quot;, userName);
+
+                                using var reader = await command.ExecuteReaderAsync();
+                                return await reader.ReadAsync() ? MapUser(reader) : null;
+                            }
+
+                            public async Task&lt;List&lt;User&gt;&gt; GetAllUsersAsync()
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;SELECT Id, UserName FROM Users ORDER BY UserName&quot;;
+
+                                var users = new List&lt;User&gt;();
+                                using var reader = await command.ExecuteReaderAsync();
+                                while (await reader.ReadAsync())
+                                    users.Add(MapUser(reader));
+                                return users;
+                            }
+
+                            public async Task&lt;int&gt; AddUserAsync(User user)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;&quot;&quot;
+                                    INSERT INTO Users (UserName) VALUES ($userName);
+                                    SELECT last_insert_rowid();
+                                    &quot;&quot;&quot;;
+                                command.Parameters.AddWithValue(&quot;$userName&quot;, user.UserName);
+
+                                var result = await command.ExecuteScalarAsync();
+                                return Convert.ToInt32(result);
+                            }
+
+                            // History Methods
+
+                            public async Task&lt;List&lt;UserHistoryUsingCompanyDocuments&gt;&gt; GetHistoryByUserIdAsync(int userId)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;&quot;&quot;
+                                    SELECT Id, UserId, UserQuery, Action, DocumentId, CreatedAt
+                                    FROM UserHistoryUsingCompanyDocuments
+                                    WHERE UserId = $userId
+                                    ORDER BY CreatedAt DESC
+                                    &quot;&quot;&quot;;
+                                command.Parameters.AddWithValue(&quot;$userId&quot;, userId);
+
+                                return await ReadHistoryAsync(command);
+                            }
+
+                            public async Task&lt;List&lt;UserHistoryUsingCompanyDocuments&gt;&gt; GetHistoryByDocumentIdAsync(int documentId)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;&quot;&quot;
+                                    SELECT Id, UserId, UserQuery, Action, DocumentId, CreatedAt
+                                    FROM UserHistoryUsingCompanyDocuments
+                                    WHERE DocumentId = $documentId
+                                    ORDER BY CreatedAt DESC
+                                    &quot;&quot;&quot;;
+                                command.Parameters.AddWithValue(&quot;$documentId&quot;, documentId);
+
+                                return await ReadHistoryAsync(command);
+                            }
+
+                            public async Task&lt;List&lt;UserHistoryUsingCompanyDocuments&gt;&gt; GetHistoryByActionAsync(string action)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;&quot;&quot;
+                                    SELECT Id, UserId, UserQuery, Action, DocumentId, CreatedAt
+                                    FROM UserHistoryUsingCompanyDocuments
+                                    WHERE Action = $action
+                                    ORDER BY CreatedAt DESC
+                                    &quot;&quot;&quot;;
+                                command.Parameters.AddWithValue(&quot;$action&quot;, action);
+
+                                return await ReadHistoryAsync(command);
+                            }
+
+                            public async Task&lt;int&gt; AddHistoryAsync(UserHistoryUsingCompanyDocuments history)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = &quot;&quot;&quot;
+                                    INSERT INTO UserHistoryUsingCompanyDocuments (UserId, UserQuery, Action, DocumentId, CreatedAt)
+                                    VALUES ($userId, $userQuery, $action, $documentId, $createdAt);
+                                    SELECT last_insert_rowid();
+                                    &quot;&quot;&quot;;
+
+                                command.Parameters.AddWithValue(&quot;$userId&quot;, history.UserId);
+                                command.Parameters.AddWithValue(&quot;$userQuery&quot;, history.UserQuery);
+                                command.Parameters.AddWithValue(&quot;$action&quot;, history.Action);
+                                command.Parameters.AddWithValue(&quot;$documentId&quot;, history.DocumentId);
+                                command.Parameters.AddWithValue(&quot;$createdAt&quot;, history.CreatedAt);
+
+                                var result = await command.ExecuteScalarAsync();
+                                return Convert.ToInt32(result);
+                            }
+
+                            // Joined Queries
+
+                            private const string HistoryWithDetailsQuery = &quot;&quot;&quot;
+                                SELECT 
+                                    h.Id as HistoryId, h.UserId, u.UserName, h.UserQuery, h.Action,
+                                    h.DocumentId, d.Title as DocumentTitle, d.DocumentType, d.DocumentNumber, h.CreatedAt
+                                FROM UserHistoryUsingCompanyDocuments h
+                                INNER JOIN Users u ON h.UserId = u.Id
+                                INNER JOIN Documents d ON h.DocumentId = d.Id
+                                &quot;&quot;&quot;;
+
+                            public async Task&lt;List&lt;UserHistoryWithDetails&gt;&gt; GetHistoryWithDetailsByUserIdAsync(int userId)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = $&quot;{HistoryWithDetailsQuery} WHERE h.UserId = $userId ORDER BY h.CreatedAt DESC&quot;;
+                                command.Parameters.AddWithValue(&quot;$userId&quot;, userId);
+
+                                return await ReadHistoryWithDetailsAsync(command);
+                            }
+
+                            public async Task&lt;List&lt;UserHistoryWithDetails&gt;&gt; GetHistoryWithDetailsByDocumentIdAsync(int documentId)
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = $&quot;{HistoryWithDetailsQuery} WHERE h.DocumentId = $documentId ORDER BY h.CreatedAt DESC&quot;;
+                                command.Parameters.AddWithValue(&quot;$documentId&quot;, documentId);
+
+                                return await ReadHistoryWithDetailsAsync(command);
+                            }
+
+                            public async Task&lt;List&lt;UserHistoryWithDetails&gt;&gt; GetAllHistoryWithDetailsAsync()
+                            {
+                                using var connection = CreateConnection();
+                                await connection.OpenAsync();
+
+                                var command = connection.CreateCommand();
+                                command.CommandText = $&quot;{HistoryWithDetailsQuery} ORDER BY h.CreatedAt DESC&quot;;
+
+                                return await ReadHistoryWithDetailsAsync(command);
+                            }
+
+                            // Helpers
+
+                            private SqliteConnection CreateConnection() =&gt;
+                                new($&quot;Data Source={dbConfig.ConnectionString}&quot;);
+
+                            private static User MapUser(SqliteDataReader reader) =&gt; new()
+                            {
+                                Id = reader.GetInt32(0),
+                                UserName = reader.GetString(1)
+                            };
+
+                            private static async Task&lt;List&lt;UserHistoryUsingCompanyDocuments&gt;&gt; ReadHistoryAsync(SqliteCommand command)
+                            {
+                                var history = new List&lt;UserHistoryUsingCompanyDocuments&gt;();
+                                using var reader = await command.ExecuteReaderAsync();
+                                while (await reader.ReadAsync())
+                                {
+                                    history.Add(new UserHistoryUsingCompanyDocuments
+                                    {
+                                        Id = reader.GetInt32(0),
+                                        UserId = reader.GetInt32(1),
+                                        UserQuery = reader.GetString(2),
+                                        Action = reader.GetString(3),
+                                        DocumentId = reader.GetInt32(4),
+                                        CreatedAt = reader.GetDateTime(5)
+                                    });
+                                }
+                                return history;
+                            }
+
+                            private static async Task&lt;List&lt;UserHistoryWithDetails&gt;&gt; ReadHistoryWithDetailsAsync(SqliteCommand command)
+                            {
+                                var history = new List&lt;UserHistoryWithDetails&gt;();
+                                using var reader = await command.ExecuteReaderAsync();
+                                while (await reader.ReadAsync())
+                                {
+                                    history.Add(new UserHistoryWithDetails
+                                    {
+                                        HistoryId = reader.GetInt32(0),
+                                        UserId = reader.GetInt32(1),
+                                        UserName = reader.GetString(2),
+                                        UserQuery = reader.GetString(3),
+                                        Action = reader.GetString(4),
+                                        DocumentId = reader.GetInt32(5),
+                                        DocumentTitle = reader.GetString(6),
+                                        DocumentType = reader.GetString(7),
+                                        DocumentNumber = reader.GetString(8),
+                                        CreatedAt = reader.GetDateTime(9)
+                                    });
+                                }
+                                return history;
+                            }
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+        <section class="slide creamGGGragient orangetext">
+        <span class="shout colors" ><span>Postanowiłem ułożyć cały projekt od początku
+        </span></span>
+    </section>
+        <section class="slide " style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/newcode/projekt3.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide " style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/newcode/projekt4.jpg"" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+    <section class="slide conicG  greenseatext">
+        <span class="shout colors" ><span>Rozwiążmy teraz problem z użytkownikami
+        </span></span>
+    </section>
+              <section class="slide creamGGGragient  fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/new_iconfr/needs.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Co chcemy?</li>
+                    <ol class="nonumbers">
+                        <li class="next">Zablokować dostęp do źródeł informacji w zależności od użytkownika</li>
+                        <li class="next">Wyświetlić tylko metody MCP do których dany użytkownik ma dostęp</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+        <section class="slide creamGGGragient orangetext " >
+        <span class="shout colors" ><span>W wersji 0.8.0 jest to możliwe
+        </span></span>
+    </section>
+            <section class="slide creamGGGragient orangetext " >
+        <span class="shout colors" ><span>Powiedzmy, że mamy 2 role: Employee i Manager
+        </span></span>
+    </section>
+    <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">UserRole i UserContext</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 22px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:22px !important;">
+
+
+                        namespace CompanyDocuments.Common.Services;
+
+                        public enum UserRole
+                        {
+                            Employee,
+                            Manager
+                        }
+
+                        /// &lt;summary&gt;
+                        /// Represents the authenticated user making the MCP request.
+                        /// Resolved from the Authorization header (Bearer token).
+                        /// &lt;/summary&gt;
+                        public sealed class UserContext
+                        {
+                            public required string UserId { get; init; }
+                            public required string Name { get; init; }
+                            public required UserRole Role { get; init; }
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                <section class="slide creamGGGragient orangetext " >
+        <span class="shout colors smallerfontnew2" ><span>Samo sprawdzenie, czy użytkownik ma dostęp do danych, jest stosunkowo proste
+        </span></span>
+    </section>
+            <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/1.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/2.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/3.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                            <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/4.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">ReportService</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 18px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:18px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        namespace CompanyDocuments.Common.Services;
+
+                        public sealed class ReportService
+                        {
+                        // Static report registry — each report has required role
+                        private static readonly Dictionary&lt;string, ReportDefinition&gt; Reports = 
+                            new(StringComparer.OrdinalIgnoreCase)
+                        {
+                            [&quot;financial-q1&quot;] = new(
+                                &quot;financial-q1&quot;,
+                                &quot;Raport finansowy Q1 2025&quot;,
+                                UserRole.Manager,
+                                &quot;Przychody: 334 500 PLN | Koszty: 198 700 PLN | Zysk: 135 800 PLN | Marża: 40.6%&quot;),
+
+                            [&quot;financial-q2&quot;] = new(
+                                &quot;financial-q2&quot;,
+                                &quot;Raport finansowy Q2 2025&quot;,
+                                UserRole.Manager,
+                                &quot;Przychody: 357 000 PLN | Koszty: 224 500 PLN | Zysk: 132 500 PLN | Marża: 37.1%&quot;),
+
+                            [&quot;salary-report&quot;] = new(
+                                &quot;salary-report&quot;,
+                                &quot;Zestawienie wynagrodzeń&quot;,
+                                UserRole.Manager,
+                                &quot;Średnia: 14 200 PLN | Mediana: 12 800 PLN | Min: 7 500 PLN | Max: 28 000 PLN&quot;),
+
+                            [&quot;team-tasks&quot;] = new(
+                                &quot;team-tasks&quot;,
+                                &quot;Zadania zespołu — podsumowanie&quot;,
+                                UserRole.Employee,
+                                &quot;Otwarte: 12 | W trakcie: 8 | Zakończone: 34 | Sprinty: 3&quot;),
+
+                            [&quot;my-timesheet-summary&quot;] = new(
+                                &quot;my-timesheet-summary&quot;,
+                                &quot;Podsumowanie godzin pracy&quot;,
+                                UserRole.Employee,
+                                &quot;Czerwiec 2025 — Przepracowane: 168h | Nadgodziny: 12h | Urlop: 0 dni&quot;)
+                        };
+
+                        /// &lt;summary&gt;
+                        /// Returns all reports with access information for the given user role.
+                        /// Reports the user cannot access are still listed — but marked as denied.
+                        /// &lt;/summary&gt;
+                        public Task&lt;List&lt;ReportAccessResult&gt;&gt; GetReportsForUserAsync(UserRole userRole)
+                        {
+                            var results = Reports.Values.Select(r =&gt;
+                            {
+                                bool hasAccess = userRole &gt;= r.RequiredRole;
+
+                                return new ReportAccessResult(
+                                    ReportId: r.Id,
+                                    Title: r.Title,
+                                    HasAccess: hasAccess,
+                                    Content: hasAccess ? r.Content : null,
+                                    DeniedReason: hasAccess
+                                        ? null
+                                        : $&quot;Brak dostępu. Wymagana rola: {r.RequiredRole}. Twoja rola: {userRole}.&quot;);
+                            }).ToList();
+
+                            return Task.FromResult(results);
+                        }
+
+                        /// &lt;summary&gt;
+                        /// Get a single report by ID with access check.
+                        /// &lt;/summary&gt;
+                        public Task&lt;ReportAccessResult&gt; GetReportByIdAsync(string reportId, UserRole userRole)
+                        {
+                            if (!Reports.TryGetValue(reportId, out var report))
+                            {
+                                return Task.FromResult(new ReportAccessResult(
+                                    ReportId: reportId,
+                                    Title: &quot;Nieznany raport&quot;,
+                                    HasAccess: false,
+                                    Content: null,
+                                    DeniedReason: $&quot;Raport &#39;{reportId}&#39; nie istnieje.&quot;));
+                            }
+
+                            bool hasAccess = userRole &gt;= report.RequiredRole;
+
+                            return Task.FromResult(new ReportAccessResult(
+                                ReportId: report.Id,
+                                Title: report.Title,
+                                HasAccess: hasAccess,
+                                Content: hasAccess ? report.Content : null,
+                                DeniedReason: hasAccess
+                                    ? null
+                                    : $&quot;Raport &#39;{report.Title}&#39; istnieje, ale nie masz do niego dostępu. 
+                                    Wymagana rola: {report.RequiredRole}. Twoja rola: {userRole}.&quot;));
+                        }
+                        }
+
+                        public sealed record ReportDefinition(
+                        string Id,
+                        string Title,
+                        UserRole RequiredRole,
+                        string Content);
+
+                        public sealed record ReportAccessResult(
+                        string ReportId,
+                        string Title,
+                        bool HasAccess,
+                        string? Content,
+                        string? DeniedReason);
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+    <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">ReportTools pośrednik w [McpServerToolType]</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 18px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:18px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        //  REPORT TOOLS — [RequireRole(Employee)]
+                        //  Visible to everyone authenticated.
+                        //  The tool itself shows all reports, but content is role-gated.
+
+                        [McpServerToolType]
+                        [RequireRole(UserRole.Employee)]
+                        public sealed class ReportTools(
+                            IHttpContextAccessor httpContextAccessor,
+                            ReportService reportService)
+                        {
+                            private UserContext User =&gt; 
+                                (httpContextAccessor.HttpContext?.Items[&quot;UserContext&quot;] as UserContext)!;
+
+                            [McpServerTool, Description(
+                                &quot;List all available reports. Shows which reports you have access to &quot; +
+                                &quot;and which are restricted based on your role.&quot;)]
+                            public async Task&lt;string&gt; GetReports()
+                            {
+                                var reports = await reportService.GetReportsForUserAsync(User.Role);
+                                return McpJson.Serialize(new
+                                {
+                                    success = true,
+                                    user = User.Name,
+                                    role = User.Role.ToString(),
+                                    totalReports = reports.Count,
+                                    accessibleReports = reports.Count(r =&gt; r.HasAccess),
+                                    deniedReports = reports.Count(r =&gt; !r.HasAccess),
+                                    reports
+                                });
+                            }
+
+                            [McpServerTool, Description(
+                                &quot;Get a specific report by ID. Returns content if authorized, &quot; +
+                                &quot;or an access-denied message with the required role.&quot;)]
+                            public async Task&lt;string&gt; GetReportById(
+                                [Description(&quot;Report ID (e.g. financial-q1, team-tasks, salary-report)&quot;)] string reportId)
+                            {
+                                var report = await reportService.GetReportByIdAsync(reportId, User.Role);
+                                return McpJson.Serialize(new
+                                {
+                                    success = report.HasAccess,
+                                    user = User.Name,
+                                    role = User.Role.ToString(),
+                                    report
+                                });
+                            }
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                        <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/4.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                    <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Oto nasze wyzwanie z MCP
+        </span></span>
+    </section>
+                        <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/6.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                            <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/7.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/8.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/9.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/10.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                    <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Jak chcemy aby to działało?
+        </span></span>
+    </section>
+            <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/11.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/12.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_slides/13.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Oto jak to zrobić w kodzie
+        </span></span>
+    </section>
+                    <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Oto nasze serwisy
+        </span></span>
+    </section>
+            <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">EmployeeService , FinancialService , SalesService , TaskService</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 17px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:17px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+                        public sealed class EmployeeService
+                        {
+                            public Task&lt;List&lt;Employee&gt;&gt; GetEmployeeListAsync() =&gt;
+                                Task.FromResult&lt;List&lt;Employee&gt;&gt;(
+                                [
+                                    new(1, &quot;Jan Nowak&quot;,      &quot;Developer&quot;,        &quot;IT&quot;),
+                                    new(2, &quot;Maria Wiśniewska&quot;, &quot;QA Engineer&quot;,    &quot;IT&quot;),
+                                    new(3, &quot;Piotr Zieliński&quot;, &quot;Project Manager&quot;, &quot;PMO&quot;),
+                                    new(4, &quot;Katarzyna Dąbrowska&quot;, &quot;HR Specialist&quot;, &quot;HR&quot;)
+                                ]);
+                        }
+
+                        public sealed record Employee(
+                            int Id,
+                            string Name,
+                            string Position,
+                            string Department);
+
+
+                        public sealed class FinancialService
+                        {
+                            public Task&lt;FinancialSummary&gt; GetFinancialSummaryAsync() =&gt;
+                                Task.FromResult(new FinancialSummary(
+                                    Revenue: 691_500m,
+                                    Costs: 423_200m,
+                                    Profit: 268_300m,
+                                    Currency: &quot;PLN&quot;,
+                                    Period: &quot;H1-2025&quot;));
+                        }
+
+                        public sealed record FinancialSummary(
+                            decimal Revenue,
+                            decimal Costs,
+                            decimal Profit,
+                            string Currency,
+                            string Period);
+
+                        public sealed class SalesService
+                        {
+                            public Task&lt;List&lt;SaleRecord&gt;&gt; GetSalesReportAsync() =&gt;
+                                Task.FromResult&lt;List&lt;SaleRecord&gt;&gt;(
+                                [
+                                    new(&quot;Q1-2025&quot;, &quot;Licencje Enterprise&quot;, 245_000m, &quot;PLN&quot;),
+                                    new(&quot;Q1-2025&quot;, &quot;Usługi konsultingowe&quot;, 89_500m, &quot;PLN&quot;),
+                                    new(&quot;Q2-2025&quot;, &quot;Licencje Enterprise&quot;, 312_000m, &quot;PLN&quot;),
+                                    new(&quot;Q2-2025&quot;, &quot;Szkolenia&quot;, 45_000m, &quot;PLN&quot;)
+                                ]);
+                        }
+
+                        public sealed record SaleRecord(
+                            string Period,
+                            string Product,
+                            decimal Amount,
+                            string Currency);
+
+
+
+                        public sealed class TaskService
+                        {
+                            // In real app: filter by userId from DB
+                            public Task&lt;List&lt;WorkTask&gt;&gt; GetTasksForUserAsync(string userId) =&gt;
+                                Task.FromResult&lt;List&lt;WorkTask&gt;&gt;(
+                                [
+                                    new(101, &quot;Przygotować prezentację MCP&quot;,   &quot;InProgress&quot;, &quot;2025-06-15&quot;),
+                                    new(102, &quot;Code review PR #247&quot;,            &quot;Todo&quot;,       &quot;2025-06-12&quot;),
+                                    new(103, &quot;Aktualizacja dokumentacji API&quot;,  &quot;Done&quot;,       &quot;2025-06-10&quot;)
+                                ]);
+
+                            public Task&lt;TimesheetConfirmation&gt; SubmitTimesheetAsync(
+                                string userId, string date, decimal hours, string description) =&gt;
+                                Task.FromResult(new TimesheetConfirmation(
+                                    Id: Guid.NewGuid().ToString(&quot;N&quot;)[..8],
+                                    UserId: userId,
+                                    Date: date,
+                                    Hours: hours,
+                                    Description: description,
+                                    Status: &quot;Submitted&quot;));
+                        }
+
+                        public sealed record WorkTask(
+                            int Id,
+                            string Title,
+                            string Status,
+                            string DueDate);
+
+                        public sealed record TimesheetConfirmation(
+                            string Id,
+                            string UserId,
+                            string Date,
+                            decimal Hours,
+                            string Description,
+                            string Status);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+    <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors smallerfontnew2" ><span>Tworzymy atrybut, który będzie nam mówił jakie role są wymagane do korzystania z narzędzia
+        </span></span>
+    </section>
+        <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">RequireRoleAttribute</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 24px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:24px !important;">
+
+                        /// &lt;summary&gt;
+                        /// Marks an MCP tool class as requiring a specific role.
+                        /// Used by RoleBasedToolProvider to filter tools per user.
+                        /// &lt;/summary&gt;
+                        [AttributeUsage(AttributeTargets.Class, Inherited = false)]
+                        public sealed class RequireRoleAttribute(UserRole minimumRole) 
+                            : Attribute
+                        {
+                            public UserRole MinimumRole { get; } = minimumRole;
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+        <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Oto użycie tego atrybutu<br /> w praktyce
+        </span></span>
+    </section>
+            <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">MCP wydzielone w zależności od roli : ManagerTools, EmployeeTools</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 16px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:16px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        //  MANAGER TOOLS — [RequireRole(Manager)]
+                        //  These tools are completely invisible to Employee users.
+                        //  They won&#39;t even show up in tools/list.
+
+                        [McpServerToolType]
+                        [RequireRole(UserRole.Manager)]
+                        public sealed class ManagerTools(
+                            IHttpContextAccessor httpContextAccessor,
+                            SalesService salesService,
+                            EmployeeService employeeService,
+                            FinancialService financialService)
+                        {
+                            private UserContext User =&gt; (httpContextAccessor.HttpContext?.Items[&quot;UserContext&quot;] as UserContext)!;
+
+                            [McpServerTool, Description(&quot;Get sales report with revenue data per quarter and product.&quot;)]
+                            public async Task&lt;string&gt; GetSalesReport()
+                            {
+                                var data = await salesService.GetSalesReportAsync();
+                                return McpJson.Serialize
+                                (new { success = true, user = User.Name, report = &quot;Sales Report&quot;, records = data });
+                            }
+
+                            [McpServerTool, Description(&quot;Get list of all employees with their positions and departments.&quot;)]
+                            public async Task&lt;string&gt; GetEmployeeList()
+                            {
+                                var data = await employeeService.GetEmployeeListAsync();
+                                return McpJson.Serialize
+                                (new { success = true, user = User.Name, report = &quot;Employee List&quot;, employees = data });
+                            }
+
+                            [McpServerTool, Description(&quot;Get financial summary including revenue, costs and profit.&quot;)]
+                            public async Task&lt;string&gt; GetFinancialSummary()
+                            {
+                                var data = await financialService.GetFinancialSummaryAsync();
+                                return McpJson.Serialize
+                                (new { success = true, user = User.Name, report = &quot;Financial Summary&quot;, summary = data });
+                            }
+                        }
+
+                        //  EMPLOYEE TOOLS — [RequireRole(Employee)]
+                        //  Visible to Employee AND Manager (Manager &gt;= Employee).
+
+                        [McpServerToolType]
+                        [RequireRole(UserRole.Employee)]
+                        public sealed class EmployeeTools(
+                            IHttpContextAccessor httpContextAccessor,
+                            TaskService taskService)
+                        {
+                            private UserContext User =&gt; (httpContextAccessor.HttpContext?.Items[&quot;UserContext&quot;] as UserContext)!;
+
+                            [McpServerTool, Description(&quot;Get my current tasks and their statuses.&quot;)]
+                            public async Task&lt;string&gt; GetMyTasks()
+                            {
+                                var data = await taskService.GetTasksForUserAsync(User.UserId);
+                                return McpJson.Serialize
+                                (new { success = true, user = User.Name, tasks = data });
+                            }
+
+                            [McpServerTool, Description(&quot;Submit a timesheet entry with worked hours.&quot;)]
+                            public async Task&lt;string&gt; SubmitTimesheet(
+                                [Description(&quot;Date in YYYY-MM-DD format&quot;)] string date,
+                                [Description(&quot;Number of hours worked&quot;)] decimal hours,
+                                [Description(&quot;Description of work performed&quot;)] string description)
+                            {
+                                var result = await taskService.SubmitTimesheetAsync(User.UserId, date, hours, description);
+                                return McpJson.Serialize
+                                (new { success = true, user = User.Name, confirmation = result });
+                            }
+                        }
+
+                        //  Shared JSON helper
+
+                        internal static class McpJson
+                        {
+                            public static readonly JsonSerializerOptions Options = new(JsonSerializerDefaults.Web)
+                            {
+                                WriteIndented = true
+                            };
+
+                            public static string Serialize&lt;T&gt;(T value) =&gt;
+                                JsonSerializer.Serialize(value, Options);
+                        }
+
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+            <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors smallerfontnew2" ><span>Potrzebujemy oczywiście kodu który będzie filtrował narzędzia na podstawie roli użytkownika
+        </span></span>
+    </section>
+            <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">RoleBasedToolProvider</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:20px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        /// &lt;summary&gt;
+                        /// Discovers all [McpServerToolType] classes from the assembly at startup,
+                        /// then filters them per-request based on the user&#39;s role (from Bearer token).
+                        ///
+                        /// Tools decorated with [RequireRole(UserRole.Manager)] are only visible to Managers.
+                        /// Tools without [RequireRole] are visible to all authenticated users.
+                        /// Unauthenticated users see zero tools.
+                        ///
+                        /// IMPORTANT: Because of issue #707 in csharp-sdk, we cannot use .WithTools&lt;T&gt;()
+                        /// together with WithListToolsHandler — registered tools always get appended.
+                        /// Instead, we skip .WithTools&lt;T&gt;() entirely and handle discovery + DI ourselves.
+                        /// &lt;/summary&gt;
+                        public sealed class RoleBasedToolProvider
+                        {
+                            private readonly List&lt;ToolEntry&gt; _allTools;
+
+                            public RoleBasedToolProvider(IServiceProvider serviceProvider)
+                            {
+                                _allTools = DiscoverTools(serviceProvider);
+                            }
+
+                            /// &lt;summary&gt;
+                            /// Returns only the tools the current user is authorized to see.
+                            /// Called from WithListToolsHandler.
+                            /// &lt;/summary&gt;
+                            public IReadOnlyList&lt;McpServerTool&gt; GetToolsForUser(UserContext? user)
+                            {
+                                if (user is null)
+                                    return [];
+
+                                return _allTools
+                                    .Where(t =&gt; user.Role &gt;= t.MinimumRole)
+                                    .Select(t =&gt; t.Tool)
+                                    .ToList();
+                            }
+
+                            /// &lt;summary&gt;
+                            /// Finds a tool by name, but only if the user is authorized.
+                            /// Called from WithCallToolHandler.
+                            /// &lt;/summary&gt;
+                            public McpServerTool? FindTool(string toolName, UserContext? user)
+                            {
+                                if (user is null)
+                                    return null;
+
+                                return _allTools
+                                    .Where(t =&gt; user.Role &gt;= t.MinimumRole)
+                                    .FirstOrDefault(t =&gt; t.Tool.ProtocolTool.Name == toolName)
+                                    ?.Tool;
+                            }
+
+                            // Discovery 
+
+                            private static List&lt;ToolEntry&gt; DiscoverTools(IServiceProvider serviceProvider)
+                            {
+                                var toolAssembly = typeof(RoleBasedToolProvider).Assembly;
+                                var entries = new List&lt;ToolEntry&gt;();
+
+                                var options = new McpServerToolCreateOptions
+                                {
+                                    Services = serviceProvider
+                                };
+
+                                var toolTypes = toolAssembly.GetTypes()
+                                    .Where(t =&gt; t.GetCustomAttribute&lt;McpServerToolTypeAttribute&gt;() is not null);
+
+                                foreach (var type in toolTypes)
+                                {
+                                    var minimumRole = type.GetCustomAttribute&lt;RequireRoleAttribute&gt;()?.MinimumRole
+                                                    ?? UserRole.Employee;
+
+                                    var methods = type.GetMethods(
+                                        BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+
+                                    foreach (var method in methods)
+                                    {
+                                        if (method.GetCustomAttribute&lt;McpServerToolAttribute&gt;() is null)
+                                            continue;
+
+                                        McpServerTool tool;
+
+                                        if (method.IsStatic)
+                                        {
+                                            tool = McpServerTool.Create(method, options);
+                                        }
+                                        else
+                                        {
+                                            // Use the Func&lt;RequestContext, object&gt; overload so SDK
+                                            // resolves the instance from DI on each invocation.
+                                            var capturedType = type;
+                                            tool = McpServerTool.Create(
+                                                method,
+                                                (RequestContext&lt;CallToolRequestParams&gt; ctx) =&gt;
+                                                    ctx.Services!.GetRequiredService(capturedType),
+                                                options);
+                                        }
+
+                                        entries.Add(new ToolEntry(tool, minimumRole));
+                                    }
+                                }
+
+                                return entries;
+                            }
+
+                            private sealed record ToolEntry(McpServerTool Tool, UserRole MinimumRole);
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+            <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors smallerfontnew2" ><span>Przykład reprezentowania użytkowników<br /> za pomocą tokenów
+        </span></span>
+    </section>
+
+            <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Demo TokenUserResolver</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:20px !important;">
+
+
+
+
+
+
+                        /// &lt;summary&gt;
+                        /// Simple token =&gt; user resolver for demo/presentation purposes.
+                        /// In production this would validate JWT / OAuth tokens.
+                        /// &lt;/summary&gt;
+                        public sealed class TokenUserResolver
+                        {
+                            // Hard-coded demo tokens. Easy to show on a presentation slide
+                            private static readonly Dictionary&lt;string, UserContext&gt; Users 
+                                = new(StringComparer.OrdinalIgnoreCase)
+                            {
+                                [&quot;manager-token&quot;] = new UserContext
+                                {
+                                    UserId = &quot;user-1&quot;,
+                                    Name = &quot;Anna Kowalska&quot;,
+                                    Role = UserRole.Manager
+                                },
+                                [&quot;employee-token&quot;] = new UserContext
+                                {
+                                    UserId = &quot;user-2&quot;,
+                                    Name = &quot;Jan Nowak&quot;,
+                                    Role = UserRole.Employee
+                                }
+                            };
+
+                            public UserContext? Resolve(string? bearerToken) =&gt;
+                                bearerToken is not null &amp;&amp; Users.TryGetValue(bearerToken, out var user)
+                                    ? user
+                                    : null;
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Serce rozwiązania<br />leży w "program.cs"
+        </span></span>
+    </section>
+                <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Program.cs</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:20px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using CompanyDocuments.BaseMCP;
+                        using CompanyDocuments.Common.Database;
+                        using CompanyDocuments.Common.Services;
+                        using CompanyDocuments.MCPWeb;
+                        using Microsoft.Extensions.Options;
+                        using ModelContextProtocol.Protocol;
+
+                        var builder = WebApplication.CreateBuilder(args);
+
+                        // HttpContextAccessor — needed so MCP tools can read Bearer token
+                        builder.Services.AddHttpContextAccessor();
+
+                        // Auth: token → UserContext resolver
+                        builder.Services.AddSingleton&lt;TokenUserResolver&gt;();
+
+                        // Pseudo services for demo
+                        builder.Services.AddSingleton&lt;SalesService&gt;();
+                        builder.Services.AddSingleton&lt;EmployeeService&gt;();
+                        builder.Services.AddSingleton&lt;FinancialService&gt;();
+                        builder.Services.AddSingleton&lt;TaskService&gt;();
+                        builder.Services.AddSingleton&lt;ReportService&gt;();
+
+                        // Tool class DI registrations (needed for instance-method tool creation)
+                        builder.Services.AddScoped&lt;ManagerTools&gt;();
+                        builder.Services.AddScoped&lt;EmployeeTools&gt;();
+                        builder.Services.AddScoped&lt;ReportTools&gt;();
+                        builder.Services.AddScoped&lt;ElicitationTools&gt;();
+                        builder.Services.AddScoped&lt;SamplingTools&gt;();
+
+                        // Database
+                        var defaultDbPath = Path.Combine(
+                            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                            &quot;MCPServerDocuments&quot;,
+                            &quot;documents.db&quot;);
+
+                        builder.Services.AddSingleton(new DatabaseConfig
+                        {
+                            ConnectionString = Environment.GetEnvironmentVariable(&quot;DB_CONNECTION_STRING&quot;) ?? defaultDbPath
+                        });
+
+                        builder.Services.AddSingleton&lt;CompanyDocumentsRepository&gt;();
+                        builder.Services.AddSingleton&lt;UserHistoryRepository&gt;();
+                        builder.Services.AddSingleton&lt;ExcelService&gt;();
+
+                        builder.Services.Configure&lt;MailgunConfig&gt;(builder.Configuration.GetSection(&quot;Mailgun&quot;));
+                        builder.Services.AddSingleton(sp =&gt; sp.GetRequiredService&lt;IOptions&lt;MailgunConfig&gt;&gt;().Value);
+                        builder.Services.AddSingleton&lt;MailgunEmailService&gt;();
+
+                        // RoleBasedToolProvider — discovers tools from assembly, filters by role
+                        builder.Services.AddSingleton&lt;RoleBasedToolProvider&gt;();
+
+                        //  MCP Server — NO .WithTools&lt;T&gt;() !!
+                        //  We use custom handlers to control what tools/list and tools/call return.
+                        //  Issue csharp-sdk#707: WithTools always appends to ListToolsHandler result.
+
+                        builder.Services
+                            .AddMcpServer()
+                            .WithHttpTransport()
+                            .WithPromptsFromAssembly()
+                            .WithResourcesFromAssembly()
+                            .WithListToolsHandler((context, cancellationToken) =&gt;
+                            {
+                                var accessor = context.Services!.GetRequiredService&lt;IHttpContextAccessor&gt;();
+                                var user = accessor.HttpContext?.Items[&quot;UserContext&quot;] as UserContext;
+                                var provider = context.Services!.GetRequiredService&lt;RoleBasedToolProvider&gt;();
+
+                                var tools = provider.GetToolsForUser(user);
+
+                                var result = new ListToolsResult
+                                {
+                                    Tools = tools.Select(t =&gt; t.ProtocolTool).ToList()
+                                };
+
+                                return ValueTask.FromResult(result);
+                            })
+                            .WithCallToolHandler(async (context, cancellationToken) =&gt;
+                            {
+                                var accessor = context.Services!.GetRequiredService&lt;IHttpContextAccessor&gt;();
+                                var user = accessor.HttpContext?.Items[&quot;UserContext&quot;] as UserContext;
+
+                                if (user is null)
+                                {
+                                    return new CallToolResult
+                                    {
+                                        IsError = true,
+                                        Content = [new TextContentBlock
+                                        {
+                                            Text = &quot;Brak autoryzacji. Wyślij nagł&#243;wek: Authorization: Bearer &lt;token&gt;&quot;
+                                        }]
+                                    };
+                                }
+
+                                var provider = context.Services!.GetRequiredService&lt;RoleBasedToolProvider&gt;();
+                                var toolName = context.Params?.Name ?? string.Empty;
+                                var tool = provider.FindTool(toolName, user);
+
+                                if (tool is null)
+                                {
+                                    return new CallToolResult
+                                    {
+                                        IsError = true,
+                                        Content = [new TextContentBlock
+                                        {
+                                            Text = $&quot;Narzędzie &#39;{toolName}&#39; nie istnieje lub nie masz do niego dostępu.&quot;
+                                        }]
+                                    };
+                                }
+
+                                return await tool.InvokeAsync(context, cancellationToken);
+                            });
+
+                        var app = builder.Build();
+
+                        // Initialize database
+                        var dbConfig = app.Services.GetRequiredService&lt;DatabaseConfig&gt;();
+                        await DatabaseInitializer.InitializeDatabaseAsync(dbConfig.ConnectionString);
+
+                        // Middleware: resolve user from Bearer token → HttpContext.Items
+                        app.Use(async (context, next) =&gt;
+                        {
+                            if (context.Request.Path.StartsWithSegments(&quot;/mcp&quot;))
+                            {
+                                var authHeader = context.Request.Headers.Authorization.FirstOrDefault();
+                                if (authHeader?.StartsWith(&quot;Bearer &quot;, StringComparison.OrdinalIgnoreCase) is true)
+                                {
+                                    var token = authHeader[&quot;Bearer &quot;.Length..];
+                                    var resolver = context.RequestServices.GetRequiredService&lt;TokenUserResolver&gt;();
+                                    var user = resolver.Resolve(token);
+
+                                    if (user is not null)
+                                    {
+                                        context.Items[&quot;UserContext&quot;] = user;
+                                    }
+                                }
+                            }
+
+                            await next();
+                        });
+
+                        // Map MCP endpoints
+                        app.MapMcp(&quot;/mcp&quot;);
+
+                        // Landing page with all endpoints
+                        app.MapGet(&quot;/&quot;, (HttpContext ctx) =&gt;
+                        {
+                            var baseUrl = $&quot;{ctx.Request.Scheme}://{ctx.Request.Host}&quot;;
+                            return Results.Content(LandingPage.Render(baseUrl), &quot;text/html&quot;);
+                        });
+
+                        // ── Health check — shows demo tokens and endpoints
+                        app.MapGet(&quot;/health&quot;, () =&gt; Results.Ok(new
+                        {
+                            status = &quot;healthy&quot;,
+                            timestamp = DateTime.UtcNow,
+                            endpoints = new
+                            {
+                                http = &quot;http://localhost:3001/mcp&quot;,
+                                https = &quot;https://localhost:3002/mcp&quot;
+                            },
+                            demo_tokens = new
+                            {
+                                manager = &quot;Bearer manager-token =&gt; Anna Kowalska (Manager) =&gt; 7 tools&quot;,
+                                employee = &quot;Bearer employee-token =&gt; Jan Nowak (Employee) =&gt; 4 tools&quot;,
+                                no_token = &quot;No header =&gt; 0 tools&quot;
+                            }
+                        }));
+
+                        // Diagnostic: who am I?
+                        app.MapGet(&quot;/whoami&quot;, (HttpContext ctx) =&gt;
+                        {
+                            var user = ctx.Items[&quot;UserContext&quot;] as UserContext;
+                            return user is not null
+                                ? Results.Ok(new { user.UserId, user.Name, Role = user.Role.ToString() })
+                                : Results.Unauthorized();
+                        });
+
+                        app.Run();
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+    <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Czy to działa?
+        </span></span>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-01.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+           <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-02.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-03.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-04.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-05.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+             <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-06.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-07.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-08.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-09.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-10.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_auth/auth-11.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+    <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Jak to podłączyć?
+        </span></span>
+    </section>
+                    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_demo_auth/01.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                        <section class="slide cursorBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_demo_auth/02.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                            <section class="slide cursorBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_demo_auth/03.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                            <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover cursorBackground" src="pictures/new_demo_auth/04.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                                <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover cursorBackground" src="pictures/new_demo_auth/05.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                                <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover cursorBackground" src="pictures/new_demo_auth/06.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+
+
+
+
+    
+                                <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_demo_auth/07.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                            <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover " src="pictures/new_demo_auth/08.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                            <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover " src="pictures/new_demo_auth/09.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                            <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover " src="pictures/new_demo_auth/10.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                            <section class="slide llstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover " src="pictures/new_demo_auth/11.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                            <section class="slide llstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_demo_auth/12.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                                <section class="slide llstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_demo_auth/13.jpg" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide conicG greenseatext">
+        <span class="shout colors" ><span>Autoryzacja z ścieżką<br />OAuth 2.0
+        </span></span>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_20/00.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_20/01.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_20/02.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_20/03.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_20/04.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Program.cs</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 14px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:14px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using CompanyDocuments.BaseMCP;
+                        using CompanyDocuments.Common.Database;
+                        using CompanyDocuments.Common.Services;
+                        using CompanyDocuments.MCPWebAuth2.Auth;
+                        using Microsoft.AspNetCore.Authentication.JwtBearer;
+                        using Microsoft.Extensions.Options;
+                        using Microsoft.IdentityModel.Tokens;
+                        using ModelContextProtocol.Protocol;
+                        using System.Security.Claims;
+
+                        var builder = WebApplication.CreateBuilder(args);
+
+                        //  1. Authentication: JWT Bearer (tokens issued by our demo OAuth server)
+
+                        var serverUrl = builder.Configuration[&quot;ServerUrl&quot;] ?? &quot;http://localhost:3001&quot;;
+
+                        // Important it didnt work without CORS
+                        // the browser would block the response from /token endpoint and the client would never receive the access token
+                        builder.Services.AddCors(options =&gt;
+                        {
+                            options.AddDefaultPolicy(policy =&gt;
+                            {
+                                policy.AllowAnyOrigin()
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                            });
+                        });
+
+
+                        builder.Services
+                            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                            .AddJwtBearer(options =&gt;
+                            {
+                                options.TokenValidationParameters = new TokenValidationParameters
+                                {
+                                    ValidateIssuer = true,
+                                    ValidIssuer = DemoOAuthServer.Issuer,
+                                    ValidateAudience = true,
+                                    ValidAudience = DemoOAuthServer.Audience,
+                                    ValidateLifetime = true,
+                                    ValidateIssuerSigningKey = true,
+                                    IssuerSigningKey = DemoOAuthServer.SigningKey,
+                                };
+                            })
+                            // MCP Auth scheme: serves /.well-known/oauth-protected-resource
+                            // and adds resource_metadata URI to WWW-Authenticate challenges
+                            .AddMcp(options =&gt;
+                            {
+                                options.ResourceMetadata = new()
+                                {
+                                    Resource = new Uri($&quot;{serverUrl}/mcp&quot;),
+                                    AuthorizationServers = { new Uri(serverUrl) },
+                                    ScopesSupported = { &quot;mcp:tools&quot;, &quot;mcp:resources&quot; },
+                                };
+                            });
+
+                        builder.Services.AddAuthorization();
+                        builder.Services.AddHttpContextAccessor();
+
+                        //  2. Business services (reused from your existing projects)
+
+                        builder.Services.AddSingleton&lt;TokenUserResolver&gt;();
+                        builder.Services.AddSingleton&lt;SalesService&gt;();
+                        builder.Services.AddSingleton&lt;EmployeeService&gt;();
+                        builder.Services.AddSingleton&lt;FinancialService&gt;();
+                        builder.Services.AddSingleton&lt;TaskService&gt;();
+                        builder.Services.AddSingleton&lt;ReportService&gt;();
+
+                        builder.Services.AddScoped&lt;ManagerTools&gt;();
+                        builder.Services.AddScoped&lt;EmployeeTools&gt;();
+                        builder.Services.AddScoped&lt;ReportTools&gt;();
+                        builder.Services.AddScoped&lt;ElicitationTools&gt;();
+                        builder.Services.AddScoped&lt;SamplingTools&gt;();
+
+                        // Database
+                        var defaultDbPath = Path.Combine(
+                            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                            &quot;MCPServerDocuments&quot;, &quot;documents.db&quot;);
+
+                        builder.Services.AddSingleton(new DatabaseConfig
+                        {
+                            ConnectionString = Environment.GetEnvironmentVariable(&quot;DB_CONNECTION_STRING&quot;) ?? defaultDbPath
+                        });
+
+                        builder.Services.AddSingleton&lt;CompanyDocumentsRepository&gt;();
+                        builder.Services.AddSingleton&lt;UserHistoryRepository&gt;();
+                        builder.Services.AddSingleton&lt;ExcelService&gt;();
+
+                        builder.Services.Configure&lt;MailgunConfig&gt;(builder.Configuration.GetSection(&quot;Mailgun&quot;));
+                        builder.Services.AddSingleton(sp =&gt; sp.GetRequiredService&lt;IOptions&lt;MailgunConfig&gt;&gt;().Value);
+                        builder.Services.AddSingleton&lt;MailgunEmailService&gt;();
+
+                        // Role-based tool provider
+                        builder.Services.AddSingleton&lt;RoleBasedToolProvider&gt;();
+
+                        //  3. MCP Server — with HTTP transport + role-based tool filtering
+                        //     Using custom handlers (same pattern as MCPWeb project)
+
+                        builder.Services
+                            .AddMcpServer()
+                            .WithHttpTransport()
+                            .WithPromptsFromAssembly()
+                            .WithResourcesFromAssembly()
+                            .WithListToolsHandler((context, cancellationToken) =&gt;
+                            {
+                                var user = ResolveUserFromClaims(context.Services!);
+                                var provider = context.Services!.GetRequiredService&lt;RoleBasedToolProvider&gt;();
+                                var tools = provider.GetToolsForUser(user);
+
+                                return ValueTask.FromResult(new ListToolsResult
+                                {
+                                    Tools = tools.Select(t =&gt; t.ProtocolTool).ToList()
+                                });
+                            })
+                            .WithCallToolHandler(async (context, cancellationToken) =&gt;
+                            {
+                                var user = ResolveUserFromClaims(context.Services!);
+
+                                if (user is null)
+                                {
+                                    return new CallToolResult
+                                    {
+                                        IsError = true,
+                                        Content = [new TextContentBlock
+                                        {
+                                            Text = &quot;Brak autoryzacji. Zaloguj się przez OAuth 2.0 flow.&quot;
+                                        }]
+                                    };
+                                }
+
+                                var provider = context.Services!.GetRequiredService&lt;RoleBasedToolProvider&gt;();
+                                var toolName = context.Params?.Name ?? string.Empty;
+                                var tool = provider.FindTool(toolName, user);
+
+                                if (tool is null)
+                                {
+                                    return new CallToolResult
+                                    {
+                                        IsError = true,
+                                        Content = [new TextContentBlock
+                                        {
+                                            Text = $&quot;Narzędzie &#39;{toolName}&#39; nie istnieje lub nie masz do niego dostępu.&quot;
+                                        }]
+                                    };
+                                }
+
+                                return await tool.InvokeAsync(context, cancellationToken);
+                            });
+
+                        var app = builder.Build();
+
+                        //  4. Initialize database
+
+                        var dbConfig = app.Services.GetRequiredService&lt;DatabaseConfig&gt;();
+                        await DatabaseInitializer.InitializeDatabaseAsync(dbConfig.ConnectionString);
+
+                        //  5. Middleware pipeline
+
+                        app.UseCors();
+                        app.UseAuthentication();
+                        app.UseAuthorization();
+
+                        // Resolve UserContext from JWT claims (for MCP tool handlers)
+                        app.Use(async (context, next) =&gt;
+                        {
+                            if (context.Request.Path.StartsWithSegments(&quot;/mcp&quot;) &amp;&amp; context.User.Identity?.IsAuthenticated == true)
+                            {
+                                var role = context.User.FindFirst(ClaimTypes.Role)?.Value ?? &quot;Employee&quot;;
+                                var name = context.User.FindFirst(ClaimTypes.Name)?.Value
+                                        ?? context.User.FindFirst(&quot;name&quot;)?.Value
+                                        ?? &quot;Unknown&quot;;
+                                var userId = context.User.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                                        ?? context.User.FindFirst(&quot;sub&quot;)?.Value
+                                        ?? &quot;0&quot;;
+
+                                context.Items[&quot;UserContext&quot;] = new UserContext
+                                {
+                                    UserId = userId,
+                                    Name = name,
+                                    Role = Enum.TryParse&lt;UserRole&gt;(role, true, out var r) ? r : UserRole.Employee
+                                };
+                            }
+                            await next();
+                        });
+
+                        //  6. Map endpoints
+
+                        // OAuth 2.0 Authorization Server endpoints
+                        DemoOAuthServer.MapOAuthEndpoints(app, serverUrl);
+
+                        // MCP endpoint (protected by JWT auth)
+                        app.MapMcp(&quot;/mcp&quot;);
+
+                        // Landing page
+                        app.MapGet(&quot;/&quot;, (HttpContext ctx) =&gt;
+                        {
+                            var baseUrl = $&quot;{ctx.Request.Scheme}://{ctx.Request.Host}&quot;;
+                            return Results.Content(OAuth2LandingPage.Render(baseUrl), &quot;text/html&quot;);
+                        });
+
+                        // Health check
+                        app.MapGet(&quot;/health&quot;, () =&gt; Results.Ok(new
+                        {
+                            status = &quot;healthy&quot;,
+                            timestamp = DateTime.UtcNow,
+                            auth = &quot;OAuth 2.0 Authorization Code + PKCE&quot;,
+                            endpoints = new
+                            {
+                                mcp = $&quot;{serverUrl}/mcp&quot;,
+                                authorize = $&quot;{serverUrl}/authorize&quot;,
+                                token = $&quot;{serverUrl}/token&quot;,
+                                metadata = $&quot;{serverUrl}/.well-known/oauth-authorization-server&quot;,
+                                resource_metadata = $&quot;{serverUrl}/.well-known/oauth-protected-resource&quot;,
+                            },
+                            demo_users = new
+                            {
+                                manager = &quot;anna / pass → Manager role → 7 tools&quot;,
+                                employee = &quot;jan / pass → Employee role → 4 tools&quot;,
+                            }
+                        }));
+
+                        // Who am I (from JWT)
+                        app.MapGet(&quot;/whoami&quot;, (HttpContext ctx) =&gt;
+                        {
+                            var user = ctx.Items[&quot;UserContext&quot;] as UserContext;
+                            if (user is not null)
+                                return Results.Ok(new { user.UserId, user.Name, Role = user.Role.ToString() });
+
+                            if (ctx.User.Identity?.IsAuthenticated == true)
+                                return Results.Ok(new
+                                {
+                                    sub = ctx.User.FindFirst(&quot;sub&quot;)?.Value,
+                                    name = ctx.User.FindFirst(&quot;name&quot;)?.Value,
+                                    role = ctx.User.FindFirst(ClaimTypes.Role)?.Value,
+                                });
+
+                            return Results.Unauthorized();
+                        }).RequireAuthorization();
+
+                        app.Run();
+
+
+                        static UserContext? ResolveUserFromClaims(IServiceProvider services)
+                        {
+                            var accessor = services.GetRequiredService&lt;IHttpContextAccessor&gt;();
+                            var httpContext = accessor.HttpContext;
+
+                            if (httpContext?.Items[&quot;UserContext&quot;] is UserContext uc)
+                                return uc;
+
+                            var principal = httpContext?.User;
+                            if (principal?.Identity?.IsAuthenticated != true)
+                                return null;
+
+                            var role = principal.FindFirst(ClaimTypes.Role)?.Value ?? &quot;Employee&quot;;
+                            var name = principal.FindFirst(ClaimTypes.Name)?.Value
+                                    ?? principal.FindFirst(&quot;name&quot;)?.Value
+                                    ?? &quot;Unknown&quot;;
+                            var userId = principal.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                                    ?? principal.FindFirst(&quot;sub&quot;)?.Value
+                                    ?? &quot;0&quot;;
+
+                            return new UserContext
+                            {
+                                UserId = userId,
+                                Name = name,
+                                Role = Enum.TryParse&lt;UserRole&gt;(role, true, out var r) ? r : UserRole.Employee
+                            };
+                        }
+                                
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+            <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Czy to działa dla aplikacji?
+        </span></span>
+    </section>
+            <section class="slide gradientblueblackgreen" style="background-color:#10151B">
+        <figure>
+            <img class="cover" src="pictures/new/aplikacje-auth2.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide conicG greenseatext">
+        <span class="shout colors" ><span>Co nowego w MCP?
+        </span></span>
+    </section>
+        <section class="slide conicG greenseatext">
+        <span class="shout colors smallerfontnew2" ><span>Elicitations <br /> 
+            Odpytywanie użytkownika o dodatkowe informacje<br /> w trakcie działania narzędzia
+        </span></span>
+    </section>
+            <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Elicitations</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 17px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:17px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using CompanyDocuments.Common.Services;
+                        using Microsoft.AspNetCore.Http;
+                        using ModelContextProtocol.Protocol;
+                        using ModelContextProtocol.Server;
+                        using System.ComponentModel;
+                        using System.Text.Json;
+                        using static ModelContextProtocol.Protocol.ElicitRequestParams;
+
+                        namespace CompanyDocuments.BaseMCP;
+
+                        /// &lt;summary&gt;
+                        /// Demo tools showcasing MCP Elicitation — the ability to ask the user
+                        /// for additional input mid-tool-execution via interactive forms.
+                        ///
+                        /// Elicitation lets the server pause, ask the user a question (text, number,
+                        /// boolean, enum), get the answer back, and continue — all within a single
+                        /// tool invocation.
+                        ///
+                        /// Requires client to declare elicitation support in capabilities.
+                        /// MCP Inspector supports this since v0.14+.
+                        /// &lt;/summary&gt;
+                        [McpServerToolType]
+                        [RequireRole(UserRole.Employee)]
+                        public sealed class ElicitationTools(IHttpContextAccessor httpContextAccessor)
+                        {
+                            private UserContext User =&gt; 
+                            (httpContextAccessor.HttpContext?.Items[&quot;UserContext&quot;] as UserContext)!;
+
+                            [McpServerTool, Description(
+                                &quot;Delete a report by ID. Asks for user confirmation before deleting. &quot; +
+                                &quot;Demonstrates MCP Elicitation with a boolean prompt.&quot;)]
+                            public async Task&lt;string&gt; DeleteReport(
+                                McpServer server,
+                                [Description(&quot;Report ID to delete (e.g. financial-q1, team-tasks)&quot;)] string reportId,
+                                CancellationToken cancellationToken)
+                            {
+                                // 1. Check if client supports elicitation
+                                if (server.ClientCapabilities?.Elicitation is null)
+                                {
+                                    return McpJson.Serialize(new
+                                    {
+                                        success = false,
+                                        error = &quot;Klient nie obsługuje Elicitation. Użyj MCP Inspector v0.14+.&quot;
+                                    });
+                                }
+
+                                // 2. Ask user for confirmation via boolean form
+                                var confirmSchema = new RequestSchema
+                                {
+                                    Properties =
+                                    {
+                                        [&quot;Confirm&quot;] = new BooleanSchema
+                                        {
+                                            Description = $&quot;Czy na pewno chcesz usunąć raport &#39;{reportId}&#39;? 
+                                            Tej operacji nie można cofnąć.&quot;
+                                        }
+                                    }
+                                };
+
+                                var response = await server.ElicitAsync(
+                                    new ElicitRequestParams
+                                    {
+                                        Message = $&quot;⚠️ Potwierdzenie usunięcia raportu: {reportId}&quot;,
+                                        RequestedSchema = confirmSchema
+                                    },
+                                    cancellationToken);
+
+                                // 3. Check user&#39;s response
+                                if (response.Action != &quot;accept&quot;
+                                    || response.Content?[&quot;Confirm&quot;].ValueKind != JsonValueKind.True)
+                                {
+                                    return McpJson.Serialize(new
+                                    {
+                                        success = false,
+                                        message = &quot;Operacja anulowana przez użytkownika.&quot;,
+                                        user = User.Name
+                                    });
+                                }
+
+                                // 4. &quot;Delete&quot; the report (demo — nothing is actually deleted)
+                                return McpJson.Serialize(new
+                                {
+                                    success = true,
+                                    message = $&quot;Raport &#39;{reportId}&#39; został usunięty.&quot;,
+                                    deletedBy = User.Name,
+                                    timestamp = DateTime.UtcNow
+                                });
+                            }
+
+                            [McpServerTool, Description(
+                                &quot;Submit a vacation request. Asks for dates and reason via multi-field form. &quot; +
+                                &quot;Demonstrates MCP Elicitation with multiple input types.&quot;)]
+                            public async Task&lt;string&gt; RequestVacation(
+                                McpServer server,
+                                CancellationToken cancellationToken)
+                            {
+                                if (server.ClientCapabilities?.Elicitation is null)
+                                {
+                                    return McpJson.Serialize(new
+                                    {
+                                        success = false,
+                                        error = &quot;Klient nie obsługuje Elicitation.&quot;
+                                    });
+                                }
+
+                                // Ask for vacation details — multiple fields at once
+                                var vacationSchema = new RequestSchema
+                                {
+                                    Properties =
+                                    {
+                                        [&quot;StartDate&quot;] = new StringSchema
+                                        {
+                                            Description = &quot;Data rozpoczęcia urlopu (YYYY-MM-DD)&quot;
+                                        },
+                                        [&quot;EndDate&quot;] = new StringSchema
+                                        {
+                                            Description = &quot;Data zakończenia urlopu (YYYY-MM-DD)&quot;
+                                        },
+                                        [&quot;Reason&quot;] = new StringSchema
+                                        {
+                                            Description = &quot;Pow&#243;d (opcjonalnie)&quot;
+                                        },
+                                        [&quot;Type&quot;] = new UntitledSingleSelectEnumSchema
+                                        {
+                                            Description = &quot;Rodzaj urlopu&quot;,
+                                            Enum = [&quot;Wypoczynkowy&quot;, &quot;Na żądanie&quot;, &quot;Okolicznościowy&quot;, &quot;Bezpłatny&quot;]
+                                        }
+                                    }
+                                };
+
+                                var response = await server.ElicitAsync(
+                                    new ElicitRequestParams
+                                    {
+                                        Message = $&quot;&#128197; Wniosek urlopowy dla: {User.Name}&quot;,
+                                        RequestedSchema = vacationSchema
+                                    },
+                                    cancellationToken);
+
+                                if (response.Action != &quot;accept&quot; || response.Content is null)
+                                {
+                                    return McpJson.Serialize(new
+                                    {
+                                        success = false,
+                                        message = &quot;Wniosek urlopowy anulowany.&quot;
+                                    });
+                                }
+
+                                var startDate = response.Content[&quot;StartDate&quot;].GetString();
+                                var endDate = response.Content[&quot;EndDate&quot;].GetString();
+                                var reason = response.Content.TryGetValue(&quot;Reason&quot;, out var r) ? r.GetString() : null;
+                                var type = response.Content[&quot;Type&quot;].GetString();
+
+                                return McpJson.Serialize(new
+                                {
+                                    success = true,
+                                    message = &quot;Wniosek urlopowy złożony pomyślnie.&quot;,
+                                    vacation = new
+                                    {
+                                        employee = User.Name,
+                                        startDate,
+                                        endDate,
+                                        type,
+                                        reason = reason ?? &quot;(brak)&quot;,
+                                        status = &quot;Oczekuje na akceptację&quot;,
+                                        submittedAt = DateTime.UtcNow
+                                    }
+                                });
+                            }
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+    <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/01.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/02.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Sposób na timeout</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 14px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:14px !important;">
+
+                        http://localhost:6274/?MCP_SERVER_REQUEST_TIMEOUT=300000
+
+                        http://localhost:6274/?
+                        MCP_PROXY_AUTH_TOKEN=4cfe6535eed3b907cc1a43a6b1e979c8bdf7432cd1a7fcf0665800191ff7c406&&MCP_SERVER_REQUEST_TIMEOUT=300000#tools
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+            <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/02-01.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/02-02.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/02-03.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide cursorBackground" style="background-color:black">
+        <figure>
+            <img class="cover " src="pictures/new_coolMCP/02-04.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide cursorBackground" style="background-color:black">
+        <figure>
+            <img class="cover " src="pictures/new_coolMCP/02-05.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                    <section class="slide lmstudiobackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/02-06.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                        <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/02-07.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide conicG greenseatext">
+        <span class="shout colors" ><span>Sampling <br /> 
+            MCP uruchamia LLM
+        </span></span>
+    </section>
+                <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">Sampling</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 19px;overflow: hidden;  " class="language-cs">
+                    <code style="line-height:19px !important;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        using CompanyDocuments.Common.Services;
+                        using Microsoft.AspNetCore.Http;
+                        using Microsoft.Extensions.AI;
+                        using ModelContextProtocol.Server;
+                        using System.ComponentModel;
+
+                        namespace CompanyDocuments.BaseMCP;
+
+                        /// &lt;summary&gt;
+                        /// Demo tools showcasing MCP Sampling — reverse communication where the SERVER
+                        /// asks the CLIENT&#39;s LLM to process something.
+                        ///
+                        /// Normal flow:  Client =&gt; Server (tool call)
+                        /// Sampling flow: Client =&gt; Server =&gt; Client&#39;s LLM =&gt; Server (continues tool)
+                        ///
+                        /// The server sends a prompt to the client via McpServer.AsSamplingChatClient(),
+                        /// the client forwards it to its LLM, and returns the response back to the server.
+                        ///
+                        /// Use cases: summarization, translation, classification — all done by the
+                        /// client&#39;s model, orchestrated by the server.
+                        ///
+                        /// Requires client to declare sampling support in capabilities.
+                        /// In MCP Inspector: enable &quot;Sampling&quot; in client capabilities.
+                        /// &lt;/summary&gt;
+                        [McpServerToolType]
+                        [RequireRole(UserRole.Employee)]
+                        public sealed class SamplingTools(
+                            IHttpContextAccessor httpContextAccessor,
+                            SalesService salesService,
+                            ReportService reportService)
+                        {
+                            private UserContext User =&gt; (httpContextAccessor.HttpContext?.Items[&quot;UserContext&quot;] as UserContext)!;
+
+                            [McpServerTool, Description(
+                                &quot;Analyze sales data using the client&#39;s LLM. &quot; +
+                                &quot;The server fetches sales records, then asks the CLIENT&#39;s AI model &quot; +
+                                &quot;to provide insights. Demonstrates MCP Sampling (reverse communication).&quot;)]
+                            public async Task&lt;string&gt; AnalyzeSalesWithAI(
+                                McpServer server,
+                                [Description(&quot;What aspect to analyze (e.g. &#39;trends&#39;, &#39;recommendations&#39;, &#39;risks&#39;)&quot;)] string focus,
+                                CancellationToken cancellationToken)
+                            {
+                                // 1. Check if client supports sampling
+                                if (server.ClientCapabilities?.Sampling is null)
+                                {
+                                    return McpJson.Serialize(new
+                                    {
+                                        success = false,
+                                        error = &quot;Klient nie obsługuje Sampling. Włącz &#39;Sampling&#39; w capabilities klienta.&quot;
+                                    });
+                                }
+
+                                // 2. Server fetches data from its own services (normal server-side work)
+                                var salesData = await salesService.GetSalesReportAsync();
+                                var salesText = string.Join(&quot;\n&quot;, salesData.Select(s =&gt;
+                                    $&quot;- {s.Period}: {s.Product} = {s.Amount:N0} {s.Currency}&quot;));
+
+                                // 3. Server sends the data + prompt BACK to the client&#39;s LLM via Sampling
+                                //    This is the &quot;reverse communication&quot; — server → client&#39;s AI
+                                ChatMessage[] messages =
+                                [
+                                    new(ChatRole.User,
+                                        $&quot;&quot;&quot;
+                                        Przeanalizuj poniższe dane sprzedażowe. Skup się na: {focus}
+                                        Odpowiedz po polsku, zwięźle (max 3-4 zdania).
+
+                                        Dane sprzedażowe:
+                                        {salesText}
+                                        &quot;&quot;&quot;)
+                                ];
+
+                                var chatOptions = new ChatOptions
+                                {
+                                    MaxOutputTokens = 300,
+                                    Temperature = 0.5f
+                                };
+
+                                // AsSamplingChatClient() sends the request to the CLIENT&#39;s LLM
+                                var aiResponse = await server.AsSamplingChatClient()
+                                    .GetResponseAsync(messages, chatOptions, cancellationToken);
+
+                                // 4. Server receives the LLM&#39;s response and wraps it in the tool result
+                                return McpJson.Serialize(new
+                                {
+                                    success = true,
+                                    user = User.Name,
+                                    tool = &quot;AnalyzeSalesWithAI&quot;,
+                                    focus,
+                                    salesRecords = salesData.Count,
+                                    aiAnalysis = aiResponse.Text,
+                                    note = &quot;Analiza wykonana przez model AI po stronie klienta (Sampling)&quot;
+                                });
+                            }
+
+                            [McpServerTool, Description(
+                                &quot;Generate an executive summary of all accessible reports using the client&#39;s LLM. &quot; +
+                                &quot;Server gathers report data, then asks the CLIENT&#39;s AI to write a summary. &quot; +
+                                &quot;Demonstrates MCP Sampling with larger context.&quot;)]
+                            public async Task&lt;string&gt; GenerateExecutiveSummary(
+                                McpServer server,
+                                CancellationToken cancellationToken)
+                            {
+                                if (server.ClientCapabilities?.Sampling is null)
+                                {
+                                    return McpJson.Serialize(new
+                                    {
+                                        success = false,
+                                        error = &quot;Klient nie obsługuje Sampling.&quot;
+                                    });
+                                }
+
+                                // Gather all reports the user has access to
+                                var reports = await reportService.GetReportsForUserAsync(User.Role);
+                                var accessibleReports = reports.Where(r =&gt; r.HasAccess).ToList();
+
+                                if (accessibleReports.Count == 0)
+                                {
+                                    return McpJson.Serialize(new
+                                    {
+                                        success = false,
+                                        error = &quot;Brak dostępnych raport&#243;w do podsumowania.&quot;
+                                    });
+                                }
+
+                                var reportsText = string.Join(&quot;\n&quot;, accessibleReports.Select(r =&gt;
+                                    $&quot;[{r.ReportId}] {r.Title}: {r.Content}&quot;));
+
+                                // Send to client&#39;s LLM for summarization
+                                ChatMessage[] messages =
+                                [
+                                    new(ChatRole.User,
+                                        $&quot;&quot;&quot;
+                                        Na podstawie poniższych raport&#243;w napisz kr&#243;tkie podsumowanie wykonawcze
+                                        (executive summary) po polsku. Max 5 zdań. Wyciągnij kluczowe wnioski.
+
+                                        Raporty:
+                                        {reportsText}
+                                        &quot;&quot;&quot;)
+                                ];
+
+                                var chatOptions = new ChatOptions
+                                {
+                                    MaxOutputTokens = 500,
+                                    Temperature = 0.3f
+                                };
+
+                                var aiResponse = await server.AsSamplingChatClient()
+                                    .GetResponseAsync(messages, chatOptions, cancellationToken);
+
+                                return McpJson.Serialize(new
+                                {
+                                    success = true,
+                                    user = User.Name,
+                                    role = User.Role.ToString(),
+                                    reportsAnalyzed = accessibleReports.Count,
+                                    executiveSummary = aiResponse.Text,
+                                    note = &quot;Podsumowanie wygenerowane przez model AI klienta (Sampling)&quot;
+                                });
+                            }
+                        }
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+        <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/03.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+              <section class="slide" style="background-color:#020818">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/04.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+            <section class="slide cursorBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/05.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                <section class="slide cursorBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/06.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                    <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/07.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                    <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/08.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                    <section class="slide visualstudioBackground" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/new_coolMCP/09.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+    <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Podsumowanie
+        </span></span>
+    </section>
+        <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/new_iconfr/insurance.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">MCP ma moc</li>
+                    <ol class="nonumbers">
+                        <li class="next">Można wydzielić metody dla konkretnego użytkownika</li>
+                        <li class="next">OAuth 2.0 działa, ale wymaga ręcznego wpisywania tokenu</li>
+                        <li class="next">Nowe funkcje MCP:<br />Elicitations i Sampling</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+        <section class="slide creamGGGragient fullscreen " >
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img  src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class=" bold">Inne pomysły na prezentacje</li>
+                    <ol class="nonumbers">
+                        <li class="next">Analiza modeli VL i OCR dla dokumentów</li>
+                        <li class="next">Playwright i MCP czyli automatyczne testy end to end</li>
+                    </ol>
+                </ol>
+            </div>
+          </div>
+    </section>
+        <section class="slide creammBBBGragient  deepbluetext">
+        <span class="shout colors" ><span>Ogłoszenie
+        </span></span>
+    </section>
+    <!-- <div class="progress"></div> -->
+    <footer class="badge badge-top-left">
+        <a href="#" class="fullscreen">Fullscreen</a>
+    </footer>
+
+    <script src="vendors/gamepad/gamepad.js"></script>
+    <script src="vendors/shower/shower.min.js"></script>
+    <script src="vendors/shower-gamepad/shower.gamepad.js"></script>
+
+    <!-- Prism.js -->
+    <script src="vendors/prism/prism.js"></script>
+    <script src="vendors/prism/custom-prism.js"></script>
+
+</body>
+
+</html>
